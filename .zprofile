@@ -3,17 +3,10 @@
 ## 	.zprofile for user (Used on Mac OS X)
 ##
 ##	  author : gbergere (Geoffrey BERGERET)
-##	  version : 1.1.1
-##	  date : 06/09/2016
+##	  version : 1.2
+##	  date : 07/09/2016
 ##	  
 ## ----------------------------------------------------------------------------
-
-## ----------------------------------------------------------------------------
-# ZSH GIT COMPLETION
-# -----------------------------------------------------------------------------
-
-autoload -U compinit && compinit
-zmodload -i zsh/complist
 
 ## ----------------------------------------------------------------------------
 # CONFIGS
@@ -30,15 +23,22 @@ bindkey -e # Fix Ctrl-A unbinding.
 # HISTORY CONF
 # -----------------------------------------------------------------------------
 
+export HISTFILE="${HOME}/.zhistory"
+export HISTSIZE=1000
+export SAVEHIST=1000
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_SAVE_NO_DUPS
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTFILE="${HOME}/.zhistory"
+
+## ----------------------------------------------------------------------------
+# ZSH GIT COMPLETION
+# -----------------------------------------------------------------------------
+
+autoload -U compinit && compinit
+zmodload -i zsh/complist
 
 ## ----------------------------------------------------------------------------
 # TMUX
