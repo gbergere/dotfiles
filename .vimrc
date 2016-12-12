@@ -26,6 +26,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-hclfmt'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
