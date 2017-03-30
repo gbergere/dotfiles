@@ -20,6 +20,8 @@ call vundle#begin()
 " Plugins 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
@@ -46,9 +48,18 @@ set autoindent
 set background=dark
 
 :let g:NERDTreeWinSize=40
-" Airline config.
+
+" Airline config
 let g:airline#extensions#tabline#enabled = 1
 if !has('gui_running')
   set t_Co=256
 endif
 
+" CtrlP config
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+  \ }

@@ -1,0 +1,6 @@
+# MacOSX/Linux
+*.swp
+*.swo
+
+# Binaries
+*.zip
