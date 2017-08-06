@@ -27,7 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'fatih/vim-hclfmt'
+Plugin 'hashivim/vim-terraform'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -47,7 +47,11 @@ set expandtab
 set autoindent
 set background=dark
 
-:let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=40
+
+let g:terraform_align=1
+let g:terraform_remap_spacebar=1
+let g:terraform_fmt_on_save=1
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1
