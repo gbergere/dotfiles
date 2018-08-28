@@ -1,0 +1,10 @@
+[alias]
+	co = checkout
+	st = status -s
+  br = branch
+[core]
+	excludesfile = /Users/gbergere/.gitignore
+[user]
+	name = Geoffrey Bergeret
+[pull]
+	rebase = true

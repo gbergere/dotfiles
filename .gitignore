@@ -4,3 +4,7 @@
 
 # Binaries
 *.zip
+
+# Terraform
+.terraform/
+terraform.tfstate*
