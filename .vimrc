@@ -72,3 +72,19 @@ let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
+
+"""
+" Install ALE Plugin
+"
+" Use :
+" - https://github.com/koalaman/shellcheck (Bash)
+" - https://github.com/wata727/tflint
+" - https://github.com/willthames/ansible-lint
+" - https://github.com/jorisroovers/gitlint (Git commit)
+" - https://yamllint.readthedocs.io (YAML)
+" - https://github.com/mrtazz/checkmake (Makefile)
+" - https://github.com/hadolint/hadolint (Dockerfile)
+" - https://github.com/Kuniwak/vint (Vim)
+""
+Plugin 'w0rp/ale'
+let g:ale_list_window_size = 5 " Show 5 lines of errors (default: 10)
