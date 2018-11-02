@@ -8,3 +8,5 @@
 	name = Geoffrey Bergeret
 [pull]
 	rebase = true
+[commit]
+	gpgSign = true
