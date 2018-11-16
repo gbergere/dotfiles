@@ -11,6 +11,7 @@
 ""
 
 set nocompatible              " be iMproved, required
+set t_Co=256
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -27,8 +28,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'hashivim/vim-terraform'
 Plugin 'pearofducks/ansible-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,11 +50,15 @@ let g:terraform_align=1
 let g:terraform_remap_spacebar=1
 let g:terraform_fmt_on_save=1
 
-" Airline config
-let g:airline#extensions#tabline#enabled = 1
-if !has('gui_running')
-  set t_Co=256
+"""
+" Airline
+""
+Plugin 'vim-airline/vim-airline'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
 endif
+let g:airline_symbols.branch = '⎇'
 
 " CtrlP config
 let g:ctrlp_user_command = {
