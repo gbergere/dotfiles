@@ -11,7 +11,6 @@
 ""
 
 set nocompatible              " be iMproved, required
-set t_Co=256
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,13 +19,11 @@ call vundle#begin()
 
 " Plugins 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
-Plugin 'hashivim/vim-terraform'
 Plugin 'pearofducks/ansible-vim'
 
 call vundle#end()            " required
@@ -38,20 +35,42 @@ filetype plugin indent on    " required
 
 syntax on
 
+set t_Co=256
 set number
 set tabstop=2
+set smarttab
 set expandtab
 set autoindent
 set background=dark
+let &colorcolumn=80  " shows the column 80
+
+
+" Turns backup off so avoid conflicts with git.
+set nobackup
+set nowb
+set noswapfile
+
+" Remap Vim's 0 to first non blank character 
+map 0 ^
+
+"""
+" NERDTree Plugin
+""
+Plugin 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize=40
+
+"""
+" Terraform Plugin
+""
+Plugin 'hashivim/vim-terraform'
 
 let g:terraform_align=1
 let g:terraform_remap_spacebar=1
 let g:terraform_fmt_on_save=1
 
 """
-" Airline
+" Airline Plugin
 ""
 Plugin 'vim-airline/vim-airline'
 
@@ -76,7 +95,7 @@ let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
 
 """
-" Install ALE Plugin
+" ALE Plugin
 "
 " Use :
 " - https://github.com/koalaman/shellcheck (Bash)
@@ -93,7 +112,7 @@ Plugin 'w0rp/ale'
 let g:ale_list_window_size = 5 " Show 5 lines of errors (default: 10)
 
 """
-" Vimux
+" Vimux Plugin
 ""
 Plugin 'benmills/vimux'
 let g:VimuxPromptString = ">>"
