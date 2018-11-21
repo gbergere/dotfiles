@@ -41,8 +41,10 @@ set smarttab
 set expandtab
 set autoindent
 set background=dark
-let &colorcolumn=80  " shows the column 80
 
+" Higlight 80 chars line and 120 chars and over.
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="81,".join(range(121,999),",")
 
 " Turns backup off so avoid conflicts with git.
 set nobackup
@@ -79,11 +81,14 @@ endif
 let g:airline_symbols.branch = '⎇'
 
 """
-" AG
+" Ack
 ""
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 
-let g:ag_working_path_mode="r"
+cnoreabbrev Ack Ack!
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 """
 " CtrlP config
