@@ -19,7 +19,6 @@ call vundle#begin()
 
 " Plugins 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -79,7 +78,18 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.branch = '⎇'
 
+"""
+" AG
+""
+Plugin 'rking/ag.vim'
+
+let g:ag_working_path_mode="r"
+
+"""
 " CtrlP config
+""
+Plugin 'ctrlpvim/ctrlp.vim'
+
 let g:ctrlp_user_command = {
   \ 'types': {
     \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
