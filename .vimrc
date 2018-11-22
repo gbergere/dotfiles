@@ -86,6 +86,7 @@ let g:airline_symbols.branch = '⎇'
 Plugin 'mileszs/ack.vim'
 
 cnoreabbrev Ack Ack!
+nnoremap <Leader>f :Ack!<Space>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -135,9 +136,11 @@ let g:VimuxOrientation = "h"
 let g:VimuxHeight = "25"
 
 " Run a given command
-map <leader>rg :VimuxPromptCommand<cr>
+map <leader>ve :VimuxPromptCommand<cr>
 " Repeat last command
-map <leader>rr :VimuxRunLastCommand<cr>
+map <leader>vr :VimuxRunLastCommand<cr>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
 
 """
 " Automatically set paste mode 
