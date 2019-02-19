@@ -5,6 +5,7 @@
 require("app_shortcuts")
 require("fn_shortcuts")
 require("reload")
+require("watchers")
 require("window_manager")
 
 -----------------------------------------------
