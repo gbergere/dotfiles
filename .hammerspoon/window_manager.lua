@@ -6,54 +6,62 @@ local hyper = {"alt", "cmd"}
 local margin = 20
 
 -----------------------------------------------
--- hyper m to center window
+-- hyper b to center window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "b", function()
+local center = function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
 
-    f.w = max.w * 0.6
-    f.h = max.h * 0.9
+    f.w = 1400
+    f.h = max.h * (max.h > 1200 and 0.7 or 0.9)
     win:setFrame(f)
     win:centerOnScreen(screen)
-end)
+end
+hs.hotkey.bind(hyper, "b", center)
+hs.hotkey.bind(hyper, "up", center)
 
 -----------------------------------------------
 -- hyper d for left one half window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "d", function()
+local left50 = function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
 
+    local width = max.h > 1600 and 0.5 or 0.65
     f.x = max.x + margin
     f.y = max.y + margin
-    f.w = max.w / 2 - margin * 1.5
+    f.w = max.w * width - margin * 1.5
     f.h = max.h - margin * 2
     win:setFrame(f)
-end)
+end
+hs.hotkey.bind(hyper, "d", left50)
+hs.hotkey.bind(hyper, "left", left50)
 
 -----------------------------------------------
 -- hyper g for right one half window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "g", function()
+local right50 = function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
 
-    f.x = max.x + (max.w + margin) / 2
+    local width = max.h > 1600 and 0.5 or 0.35
+    f.x = max.x + (max.w + margin) * (1 - width)
     f.y = max.y + margin
-    f.w = max.w / 2 - margin * 1.5
+    f.w = max.w * width - margin * 1.5
     f.h = max.h - margin * 2
     win:setFrame(f)
-end)
+end
+hs.hotkey.bind(hyper, "g", right50)
+hs.hotkey.bind(hyper, "right", right50)
 
 -----------------------------------------------
 -- hyper space to maximize the window
