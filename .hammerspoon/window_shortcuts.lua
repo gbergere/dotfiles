@@ -18,7 +18,7 @@ local center = function()
     local max = screen:frame()
 
     f.w = 1400
-    f.h = max.h * (max.h > smallScreenWidth and 0.7 or 0.9)
+    f.h = max.h * (max.h > smallScreenWidth and 0.75 or 0.9)
     win:setFrame(f)
     win:centerOnScreen(screen)
 end

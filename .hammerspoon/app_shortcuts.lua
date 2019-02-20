@@ -4,6 +4,8 @@
 -- Alt + t -- Terminal
 -- Alt + s -- Slack
 -- Alt + c -- Google Chrome
+-- Alt + e -- Mail
+-- Alt + b -- Safari
 -----------------------------------------------
 
 local hyper = {"alt"}
@@ -31,4 +33,20 @@ end)
 
 hs.hotkey.bind(hyper, "c", function()
     hs.application.launchOrFocus("Google Chrome")
+end)
+
+-----------------------------------------------
+-- hyper e to launch of focus on Mail
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "e", function()
+    hs.application.launchOrFocus("Mail")
+end)
+
+-----------------------------------------------
+-- hyper b to launch of focus on Safari
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "b", function()
+    hs.application.launchOrFocus("Safari")
 end)
