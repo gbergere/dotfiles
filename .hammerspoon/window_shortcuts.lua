@@ -1,3 +1,4 @@
+w = require("window")
 ----------------------------------------------
 -- Set up
 -----------------------------------------------
@@ -197,13 +198,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "=", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.w = f.w + max.w * 0.1
-    win:setFrame(f)
+    w.resizeWindow(hs.window.focusedWindow(), w.resize.bigger)
 end)
 
 -----------------------------------------------
@@ -211,13 +206,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "-", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.w = f.w - max.w * 0.1
-    win:setFrame(f)
+    w.resizeWindow(hs.window.focusedWindow(), w.resize.thiner)
 end)
 
 -----------------------------------------------
@@ -225,13 +214,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "=", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.h = f.h + max.h * 0.1
-    win:setFrame(f)
+    w.resizeWindow(hs.window.focusedWindow(), w.resize.taller)
 end)
 
 -----------------------------------------------
@@ -239,13 +222,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "-", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.h = f.h - max.h * 0.1
-    win:setFrame(f)
+    w.resizeWindow(hs.window.focusedWindow(), w.resize.shorter)
 end)
 
 -----------------------------------------------
@@ -253,13 +230,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "]", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = f.x + max.w * 0.1
-    win:setFrame(f)
+    w.moveWindow(hs.window.focusedWindow(), w.move.right)
 end)
 
 -----------------------------------------------
@@ -267,13 +238,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "[", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = f.x - max.w * 0.1
-    win:setFrame(f)
+    w.moveWindow(hs.window.focusedWindow(), w.move.left)
 end)
 
 -----------------------------------------------
@@ -281,13 +246,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "]", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.y = f.y + max.h * 0.1
-    win:setFrame(f)
+    w.moveWindow(hs.window.focusedWindow(), w.move.down)
 end)
 
 -----------------------------------------------
@@ -295,13 +254,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "[", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.y = f.y - max.h * 0.1
-    win:setFrame(f)
+    w.moveWindow(hs.window.focusedWindow(), w.move.up)
 end)
 
 -----------------------------------------------
