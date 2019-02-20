@@ -5,6 +5,8 @@
 local hyper = {"alt", "cmd"}
 local margin = 20
 
+local smallScreenWidth = 1200
+
 -----------------------------------------------
 -- hyper b to center window
 -----------------------------------------------
@@ -16,7 +18,7 @@ local center = function()
     local max = screen:frame()
 
     f.w = 1400
-    f.h = max.h * (max.h > 1200 and 0.7 or 0.9)
+    f.h = max.h * (max.h > smallScreenWidth and 0.7 or 0.9)
     win:setFrame(f)
     win:centerOnScreen(screen)
 end
@@ -33,7 +35,7 @@ local left50 = function()
     local screen = win:screen()
     local max = screen:frame()
 
-    local width = max.h > 1600 and 0.5 or 0.65
+    local width = max.h > smallScreenWidth and 0.5 or 0.65
     f.x = max.x + margin
     f.y = max.y + margin
     f.w = max.w * width - margin * 1.5
@@ -53,7 +55,7 @@ local right50 = function()
     local screen = win:screen()
     local max = screen:frame()
 
-    local width = max.h > 1600 and 0.5 or 0.35
+    local width = max.h > smallScreenWidth and 0.5 or 0.35
     f.x = max.x + (max.w + margin) * (1 - width)
     f.y = max.y + margin
     f.w = max.w * width - margin * 1.5

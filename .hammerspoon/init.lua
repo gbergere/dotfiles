@@ -5,8 +5,8 @@
 require("app_shortcuts")
 require("fn_shortcuts")
 require("reload")
-require("watchers")
-require("window_manager")
+require("app_watcher")
+require("window_shortcuts")
 
 -----------------------------------------------
 -- Defeating paste blocking (when shift)
