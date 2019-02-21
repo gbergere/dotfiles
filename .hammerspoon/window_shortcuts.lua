@@ -1,8 +1,11 @@
-local w = require("window")
+local window = require("window")
 local s = require("hs._asm.undocumented.spaces")
 ----------------------------------------------
 -- Set up
 -----------------------------------------------
+
+-- Disable animation transition on windows
+hs.window.animationDuration = 0
 
 local hyper = {"alt", "cmd"}
 local margin = 20
@@ -10,7 +13,7 @@ local margin = 20
 local smallScreenWidth = 1200
 
 -----------------------------------------------
--- hyper b to center window
+-- hyper space to center window
 -----------------------------------------------
 
 local center = function()
@@ -24,8 +27,7 @@ local center = function()
     win:setFrame(f)
     win:centerOnScreen(screen)
 end
-hs.hotkey.bind(hyper, "b", center)
-hs.hotkey.bind(hyper, "up", center)
+hs.hotkey.bind(hyper, "space", center)
 
 -----------------------------------------------
 -- hyper d for left one half window
@@ -68,10 +70,10 @@ hs.hotkey.bind(hyper, "g", right50)
 hs.hotkey.bind(hyper, "right", right50)
 
 -----------------------------------------------
--- hyper space to maximize the window
+-- hyper f to maximize the window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "space", function()
+hs.hotkey.bind(hyper, "f", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
@@ -82,14 +84,6 @@ hs.hotkey.bind(hyper, "space", function()
     f.w = max.w - margin * 2
     f.h = max.h - margin * 2
     win:setFrame(f)
-end)
-
------------------------------------------------
--- hyper f to toggle fullscreen
------------------------------------------------
-
-hs.hotkey.bind(hyper, "f", function()
-    hs.window.focusedWindow():toggleFullScreen()
 end)
 
 -----------------------------------------------
@@ -199,7 +193,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "=", function()
-    w.resizeWindow(hs.window.focusedWindow(), w.resize.bigger)
+    window.moveAndResize(hs.window.focusedWindow(), window.resize.bigger)
 end)
 
 -----------------------------------------------
@@ -207,7 +201,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "-", function()
-    w.resizeWindow(hs.window.focusedWindow(), w.resize.thiner)
+    window.moveAndResize(hs.window.focusedWindow(), window.resize.thiner)
 end)
 
 -----------------------------------------------
@@ -215,7 +209,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "=", function()
-    w.resizeWindow(hs.window.focusedWindow(), w.resize.taller)
+    window.moveAndResize(hs.window.focusedWindow(), window.resize.taller)
 end)
 
 -----------------------------------------------
@@ -223,7 +217,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "-", function()
-    w.resizeWindow(hs.window.focusedWindow(), w.resize.shorter)
+    window.moveAndResize(hs.window.focusedWindow(), window.resize.shorter)
 end)
 
 -----------------------------------------------
@@ -231,7 +225,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "]", function()
-    w.moveWindow(hs.window.focusedWindow(), w.move.right)
+    window.moveAndResize(hs.window.focusedWindow(), window.move.right)
 end)
 
 -----------------------------------------------
@@ -239,7 +233,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "[", function()
-    w.moveWindow(hs.window.focusedWindow(), w.move.left)
+    window.moveAndResize(hs.window.focusedWindow(), window.move.left)
 end)
 
 -----------------------------------------------
@@ -247,7 +241,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "]", function()
-    w.moveWindow(hs.window.focusedWindow(), w.move.down)
+    window.moveAndResize(hs.window.focusedWindow(), window.move.down)
 end)
 
 -----------------------------------------------
@@ -255,7 +249,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "[", function()
-    w.moveWindow(hs.window.focusedWindow(), w.move.up)
+    window.moveAndResize(hs.window.focusedWindow(), window.move.up)
 end)
 
 -----------------------------------------------
