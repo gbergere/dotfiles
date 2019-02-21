@@ -12,6 +12,6 @@ require("window_shortcuts")
 -- Defeating paste blocking (when shift)
 -----------------------------------------------
 
-hs.hotkey.bind({"cmd", "shift"}, 'v', function() 
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents()) 
+hs.hotkey.bind({"cmd", "shift"}, 'v', function()
+    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
 end)

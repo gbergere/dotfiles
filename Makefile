@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := install
-.PHONY = install clean
+.PHONY = install clean install-vim-dep
 
 ~/.hammerspoon: .hammerspoon
 	ln -s $(PWD)/$^ $@
@@ -20,6 +20,9 @@
 	ln -s $(PWD)/$^ $@
 
 install: ~/.hammerspoon ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.vimrc ~/.zprofile
+
+install-vim-dep:
+	luarocks install luacheck
 
 clean: ~/.hammerspoon ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.vimrc ~/.zprofile
 	rm $^ 
