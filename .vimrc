@@ -25,6 +25,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'editorconfig/editorconfig-vim'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
