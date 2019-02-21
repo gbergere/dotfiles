@@ -1,4 +1,5 @@
 w = require("window")
+s = require("hs._asm.undocumented.spaces")
 ----------------------------------------------
 -- Set up
 -----------------------------------------------
@@ -268,13 +269,67 @@ hs.hotkey.bind(hyper, ".", function()
 end)
 
 -----------------------------------------------
--- hyper , to move on next screen
+-- hyper , to move on previous screen
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, ",", function()
     local win = hs.window.focusedWindow()
     local screen = win:screen()
     win:moveToScreen(screen:previous())
+end)
+
+-----------------------------------------------
+-- hyper shift . to move on next space
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), ".", function()
+    local win = hs.window.focusedWindow()
+    local space = s.activeSpace()
+
+    if s.spaceType(space) ~= s.types.user then
+        return
+    end
+
+    local screen = s.spaceScreenUUID(space)
+    local spaces = s.spacesByScreenUUID()[screen]
+
+    -- Need to find a way how to use table.getn() @TODO
+    local spaces_count = 0
+    for k, v in pairs(spaces) do
+        spaces_count = spaces_count + 1
+    end
+
+    for k, v in pairs(spaces) do
+        if k < spaces_count and v == space then
+            win:spacesMoveTo(spaces[k + 1])
+        end
+    end
+
+    win:focus()
+end)
+
+-----------------------------------------------
+-- hyper shift , to move on previous space
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), ",", function()
+    local win = hs.window.focusedWindow()
+    local space = s.activeSpace()
+
+    if s.spaceType(space) ~= s.types.user then
+        return
+    end
+
+    local screen = s.spaceScreenUUID(space)
+    local spaces = s.spacesByScreenUUID()[screen]
+
+    for k, v in pairs(spaces) do
+        if k > 1 and v == space then
+            win:spacesMoveTo(spaces[k - 1])
+        end
+    end
+
+    win:focus()
 end)
 
 -----------------------------------------------

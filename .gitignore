@@ -9,3 +9,6 @@
 .terraform/
 terraform.tfstate*
 .terraform.tfstate.lock*
+
+# Hammerspoon
+hs
