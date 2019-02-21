@@ -1,5 +1,5 @@
-w = require("window")
-s = require("hs._asm.undocumented.spaces")
+local w = require("window")
+local s = require("hs._asm.undocumented.spaces")
 ----------------------------------------------
 -- Set up
 -----------------------------------------------
@@ -294,18 +294,21 @@ hs.hotkey.bind(table.concat(hyper, "ctrl"), ".", function()
     local spaces = s.spacesByScreenUUID()[screen]
 
     -- Need to find a way how to use table.getn() @TODO
+    local filtered_spaces = {}
     local spaces_count = 0
-    for k, v in pairs(spaces) do
-        spaces_count = spaces_count + 1
-    end
-
-    for k, v in pairs(spaces) do
-        if k < spaces_count and v == space then
-            win:spacesMoveTo(spaces[k + 1])
-            s.changeToSpace(spaces[k + 1])
+    for _, v in pairs(spaces) do
+        if s.spaceType(v) == s.types.user then
+            table.insert(filtered_spaces, v)
+            spaces_count = spaces_count + 1
         end
     end
 
+    for k, v in pairs(filtered_spaces) do
+        if k < spaces_count and v == space then
+            win:spacesMoveTo(filtered_spaces[k + 1])
+            s.changeToSpace(filtered_spaces[k + 1])
+        end
+    end
     win:focus()
 end)
 
@@ -324,10 +327,18 @@ hs.hotkey.bind(table.concat(hyper, "ctrl"), ",", function()
     local screen = s.spaceScreenUUID(space)
     local spaces = s.spacesByScreenUUID()[screen]
 
-    for k, v in pairs(spaces) do
+    local filtered_spaces = {}
+    for _, v in pairs(spaces) do
+        if s.spaceType(v) == s.types.user then
+            table.insert(filtered_spaces, v)
+        end
+    end
+
+
+    for k, v in pairs(filtered_spaces) do
         if k > 1 and v == space then
-            win:spacesMoveTo(spaces[k - 1])
-            s.changeToSpace(spaces[k - 1])
+            win:spacesMoveTo(filtered_spaces[k - 1])
+            s.changeToSpace(filtered_spaces[k - 1])
         end
     end
 
