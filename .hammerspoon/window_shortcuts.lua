@@ -279,10 +279,10 @@ hs.hotkey.bind(hyper, ",", function()
 end)
 
 -----------------------------------------------
--- hyper shift . to move on next space
+-- hyper ctrl . to move window on next space
 -----------------------------------------------
 
-hs.hotkey.bind(table.concat(hyper, "shift"), ".", function()
+hs.hotkey.bind(table.concat(hyper, "ctrl"), ".", function()
     local win = hs.window.focusedWindow()
     local space = s.activeSpace()
 
@@ -302,6 +302,7 @@ hs.hotkey.bind(table.concat(hyper, "shift"), ".", function()
     for k, v in pairs(spaces) do
         if k < spaces_count and v == space then
             win:spacesMoveTo(spaces[k + 1])
+            s.changeToSpace(spaces[k + 1])
         end
     end
 
@@ -309,10 +310,10 @@ hs.hotkey.bind(table.concat(hyper, "shift"), ".", function()
 end)
 
 -----------------------------------------------
--- hyper shift , to move on previous space
+-- hyper ctrl , to move window on previous space
 -----------------------------------------------
 
-hs.hotkey.bind(table.concat(hyper, "shift"), ",", function()
+hs.hotkey.bind(table.concat(hyper, "ctrl"), ",", function()
     local win = hs.window.focusedWindow()
     local space = s.activeSpace()
 
@@ -326,10 +327,49 @@ hs.hotkey.bind(table.concat(hyper, "shift"), ",", function()
     for k, v in pairs(spaces) do
         if k > 1 and v == space then
             win:spacesMoveTo(spaces[k - 1])
+            s.changeToSpace(spaces[k - 1])
         end
     end
 
     win:focus()
+end)
+
+-----------------------------------------------
+-- ctrl . to move on next space
+-----------------------------------------------
+
+hs.hotkey.bind({"ctrl"}, ".", function()
+    local space = s.activeSpace()
+    local screen = s.spaceScreenUUID(space)
+    local spaces = s.spacesByScreenUUID()[screen]
+
+    -- Need to find a way how to use table.getn() @TODO
+    local spaces_count = 0
+    for k, v in pairs(spaces) do
+        spaces_count = spaces_count + 1
+    end
+
+    for k, v in pairs(spaces) do
+        if k < spaces_count and v == space then
+            s.changeToSpace(spaces[k + 1])
+        end
+    end
+end)
+
+-----------------------------------------------
+-- ctrl , to move on previous space
+-----------------------------------------------
+
+hs.hotkey.bind({"ctrl"}, ",", function()
+    local space = s.activeSpace()
+    local screen = s.spaceScreenUUID(space)
+    local spaces = s.spacesByScreenUUID()[screen]
+
+    for k, v in pairs(spaces) do
+        if k > 1 and v == space then
+            s.changeToSpace(spaces[k - 1])
+        end
+    end
 end)
 
 -----------------------------------------------
