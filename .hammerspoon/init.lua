@@ -13,5 +13,5 @@ require("window_shortcuts")
 -----------------------------------------------
 
 hs.hotkey.bind({"cmd", "shift"}, 'v', function()
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+  hs.eventtap.keyStrokes(hs.pasteboard.getContents())
 end)

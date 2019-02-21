@@ -1,5 +1,6 @@
 local window = require("window")
 local s = require("hs._asm.undocumented.spaces")
+
 ----------------------------------------------
 -- Set up
 -----------------------------------------------
@@ -8,82 +9,56 @@ local s = require("hs._asm.undocumented.spaces")
 hs.window.animationDuration = 0
 
 local hyper = {"alt", "cmd"}
-local margin = 20
-
 local smallScreenWidth = 1200
-
------------------------------------------------
--- hyper space to center window
------------------------------------------------
-
-local center = function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.w = 1400
-    f.h = max.h * (max.h > smallScreenWidth and 0.75 or 0.9)
-    win:setFrame(f)
-    win:centerOnScreen(screen)
-end
-hs.hotkey.bind(hyper, "space", center)
-
------------------------------------------------
--- hyper d for left one half window
------------------------------------------------
-
-local left50 = function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    local width = max.h > smallScreenWidth and 0.5 or 0.65
-    f.x = max.x + margin
-    f.y = max.y + margin
-    f.w = max.w * width - margin * 1.5
-    f.h = max.h - margin * 2
-    win:setFrame(f)
-end
-hs.hotkey.bind(hyper, "d", left50)
-hs.hotkey.bind(hyper, "left", left50)
-
------------------------------------------------
--- hyper g for right one half window
------------------------------------------------
-
-local right50 = function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    local width = max.h > smallScreenWidth and 0.5 or 0.35
-    f.x = max.x + (max.w + margin) * (1 - width)
-    f.y = max.y + margin
-    f.w = max.w * width - margin * 1.5
-    f.h = max.h - margin * 2
-    win:setFrame(f)
-end
-hs.hotkey.bind(hyper, "g", right50)
-hs.hotkey.bind(hyper, "right", right50)
 
 -----------------------------------------------
 -- hyper f to maximize the window
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "f", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.maximized)
+end)
 
-    f.x = max.x + margin
-    f.y = max.y + margin
-    f.w = max.w - margin * 2
-    f.h = max.h - margin * 2
-    win:setFrame(f)
+-----------------------------------------------
+-- hyper space to center window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "space", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  local width = max.h > smallScreenWidth and 0.65 or 0.95
+  local height = max.h > smallScreenWidth and 0.85 or 0.95
+
+  window.applyLayout(win, {.175,.075, width, height})
+  win:centerOnScreen(screen)
+end)
+
+-----------------------------------------------
+-- hyper d for left one half window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "d", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  local layout = max.h > smallScreenWidth and window.layout.left50 or window.layout.left75
+  window.applyLayout(hs.window.focusedWindow(), layout)
+end)
+
+-----------------------------------------------
+-- hyper g for right one half window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "g", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  local layout = max.h > smallScreenWidth and window.layout.right50 or window.layout.right25
+  window.applyLayout(hs.window.focusedWindow(), layout)
 end)
 
 -----------------------------------------------
@@ -91,16 +66,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "r", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + margin
-    f.y = max.y + margin
-    f.w = max.w / 2 - margin * 1.5
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.topLeft)
 end)
 
 -----------------------------------------------
@@ -108,16 +74,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "t", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w + margin) / 2
-    f.y = max.y + margin
-    f.w = max.w / 2 - margin * 1.5
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.topRight)
 end)
 
 -----------------------------------------------
@@ -125,16 +82,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "v", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w + margin) / 2
-    f.y = max.y + (max.h + margin) / 2
-    f.w = max.w / 2 - margin * 1.5
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.bottomRight)
 end)
 
 -----------------------------------------------
@@ -142,16 +90,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "c", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + margin
-    f.y = max.y + (max.h + margin) / 2
-    f.w = max.w / 2 - margin * 1.5
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.bottomLeft)
 end)
 
 -----------------------------------------------
@@ -159,16 +98,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "4", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w + margin) / 2
-    f.y = max.y + margin
-    f.w = max.w / 4 - margin
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), {.5, 0, .25, .5})
 end)
 
 -----------------------------------------------
@@ -176,16 +106,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "5", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 4 * 3) + margin / 2
-    f.y = max.y + margin
-    f.w = max.w / 4 - margin * 1.5
-    f.h = max.h / 2 - margin * 1.5
-    win:setFrame(f)
+  window.applyLayout(hs.window.focusedWindow(), {.75, 0, .25, .5})
 end)
 
 -----------------------------------------------
@@ -193,7 +114,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "=", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.resize.bigger)
+  window.moveAndResize(hs.window.focusedWindow(), window.resize.bigger)
 end)
 
 -----------------------------------------------
@@ -201,7 +122,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "-", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.resize.thiner)
+  window.moveAndResize(hs.window.focusedWindow(), window.resize.thiner)
 end)
 
 -----------------------------------------------
@@ -209,7 +130,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "=", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.resize.taller)
+  window.moveAndResize(hs.window.focusedWindow(), window.resize.taller)
 end)
 
 -----------------------------------------------
@@ -217,7 +138,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "-", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.resize.shorter)
+  window.moveAndResize(hs.window.focusedWindow(), window.resize.shorter)
 end)
 
 -----------------------------------------------
@@ -225,7 +146,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "]", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.move.right)
+  window.moveAndResize(hs.window.focusedWindow(), window.move.right)
 end)
 
 -----------------------------------------------
@@ -233,7 +154,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "[", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.move.left)
+  window.moveAndResize(hs.window.focusedWindow(), window.move.left)
 end)
 
 -----------------------------------------------
@@ -241,7 +162,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "]", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.move.down)
+  window.moveAndResize(hs.window.focusedWindow(), window.move.down)
 end)
 
 -----------------------------------------------
@@ -249,7 +170,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "[", function()
-    window.moveAndResize(hs.window.focusedWindow(), window.move.up)
+  window.moveAndResize(hs.window.focusedWindow(), window.move.up)
 end)
 
 -----------------------------------------------
@@ -257,9 +178,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, ".", function()
-    local win = hs.window.focusedWindow()
-    local screen = win:screen()
-    win:moveToScreen(screen:next())
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:next())
 end)
 
 -----------------------------------------------
@@ -267,9 +188,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, ",", function()
-    local win = hs.window.focusedWindow()
-    local screen = win:screen()
-    win:moveToScreen(screen:previous())
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:previous())
 end)
 
 -----------------------------------------------
@@ -277,33 +198,33 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "ctrl"), ".", function()
-    local win = hs.window.focusedWindow()
-    local space = s.activeSpace()
+  local win = hs.window.focusedWindow()
+  local space = s.activeSpace()
 
-    if s.spaceType(space) ~= s.types.user then
-        return
+  if s.spaceType(space) ~= s.types.user then
+    return
+  end
+
+  local screen = s.spaceScreenUUID(space)
+  local spaces = s.spacesByScreenUUID()[screen]
+
+  -- Need to find a way how to use table.getn() @TODO
+  local filtered_spaces = {}
+  local spaces_count = 0
+  for _, v in pairs(spaces) do
+    if s.spaceType(v) == s.types.user then
+      table.insert(filtered_spaces, v)
+      spaces_count = spaces_count + 1
     end
+  end
 
-    local screen = s.spaceScreenUUID(space)
-    local spaces = s.spacesByScreenUUID()[screen]
-
-    -- Need to find a way how to use table.getn() @TODO
-    local filtered_spaces = {}
-    local spaces_count = 0
-    for _, v in pairs(spaces) do
-        if s.spaceType(v) == s.types.user then
-            table.insert(filtered_spaces, v)
-            spaces_count = spaces_count + 1
-        end
+  for k, v in pairs(filtered_spaces) do
+    if k < spaces_count and v == space then
+      win:spacesMoveTo(filtered_spaces[k + 1])
+      s.changeToSpace(filtered_spaces[k + 1])
     end
-
-    for k, v in pairs(filtered_spaces) do
-        if k < spaces_count and v == space then
-            win:spacesMoveTo(filtered_spaces[k + 1])
-            s.changeToSpace(filtered_spaces[k + 1])
-        end
-    end
-    win:focus()
+  end
+  win:focus()
 end)
 
 -----------------------------------------------
@@ -311,32 +232,32 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "ctrl"), ",", function()
-    local win = hs.window.focusedWindow()
-    local space = s.activeSpace()
+  local win = hs.window.focusedWindow()
+  local space = s.activeSpace()
 
-    if s.spaceType(space) ~= s.types.user then
-        return
+  if s.spaceType(space) ~= s.types.user then
+    return
+  end
+
+  local screen = s.spaceScreenUUID(space)
+  local spaces = s.spacesByScreenUUID()[screen]
+
+  local filtered_spaces = {}
+  for _, v in pairs(spaces) do
+    if s.spaceType(v) == s.types.user then
+      table.insert(filtered_spaces, v)
     end
+  end
 
-    local screen = s.spaceScreenUUID(space)
-    local spaces = s.spacesByScreenUUID()[screen]
 
-    local filtered_spaces = {}
-    for _, v in pairs(spaces) do
-        if s.spaceType(v) == s.types.user then
-            table.insert(filtered_spaces, v)
-        end
+  for k, v in pairs(filtered_spaces) do
+    if k > 1 and v == space then
+      win:spacesMoveTo(filtered_spaces[k - 1])
+      s.changeToSpace(filtered_spaces[k - 1])
     end
+  end
 
-
-    for k, v in pairs(filtered_spaces) do
-        if k > 1 and v == space then
-            win:spacesMoveTo(filtered_spaces[k - 1])
-            s.changeToSpace(filtered_spaces[k - 1])
-        end
-    end
-
-    win:focus()
+  win:focus()
 end)
 
 -----------------------------------------------
@@ -344,21 +265,21 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind({"ctrl"}, ".", function()
-    local space = s.activeSpace()
-    local screen = s.spaceScreenUUID(space)
-    local spaces = s.spacesByScreenUUID()[screen]
+  local space = s.activeSpace()
+  local screen = s.spaceScreenUUID(space)
+  local spaces = s.spacesByScreenUUID()[screen]
 
-    -- Need to find a way how to use table.getn() @TODO
-    local spaces_count = 0
-    for k, v in pairs(spaces) do
-        spaces_count = spaces_count + 1
-    end
+  -- Need to find a way how to use table.getn() @TODO
+  local spaces_count = 0
+  for k, v in pairs(spaces) do
+    spaces_count = spaces_count + 1
+  end
 
-    for k, v in pairs(spaces) do
-        if k < spaces_count and v == space then
-            s.changeToSpace(spaces[k + 1])
-        end
+  for k, v in pairs(spaces) do
+    if k < spaces_count and v == space then
+      s.changeToSpace(spaces[k + 1])
     end
+  end
 end)
 
 -----------------------------------------------
@@ -366,15 +287,15 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind({"ctrl"}, ",", function()
-    local space = s.activeSpace()
-    local screen = s.spaceScreenUUID(space)
-    local spaces = s.spacesByScreenUUID()[screen]
+  local space = s.activeSpace()
+  local screen = s.spaceScreenUUID(space)
+  local spaces = s.spacesByScreenUUID()[screen]
 
-    for k, v in pairs(spaces) do
-        if k > 1 and v == space then
-            s.changeToSpace(spaces[k - 1])
-        end
+  for k, v in pairs(spaces) do
+    if k > 1 and v == space then
+      s.changeToSpace(spaces[k - 1])
     end
+  end
 end)
 
 -----------------------------------------------
@@ -382,17 +303,17 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, 'k', function()
-    hs.window.focusedWindow():focusWindowNorth()
+  hs.window.focusedWindow():focusWindowNorth()
 end)
 
 hs.hotkey.bind(hyper, 'j', function()
-    hs.window.focusedWindow():focusWindowSouth()
+  hs.window.focusedWindow():focusWindowSouth()
 end)
 
 hs.hotkey.bind(hyper, 'l', function()
-    hs.window.focusedWindow():focusWindowEast()
+  hs.window.focusedWindow():focusWindowEast()
 end)
 
 hs.hotkey.bind(hyper, 'h', function()
-    hs.window.focusedWindow():focusWindowWest()
+  hs.window.focusedWindow():focusWindowWest()
 end)

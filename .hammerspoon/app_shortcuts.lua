@@ -11,20 +11,20 @@
 local hyper = {"alt"}
 
 -----------------------------------------------
--- hyper t to launch of focus on Terminal 
+-- hyper t to launch of focus on Terminal
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "t", function()
-    hs.application.launchOrFocus("Terminal")
-    -- @TODO Full Screen
+  hs.application.launchOrFocus("Terminal")
+  -- @TODO Full Screen
 end)
 
 -----------------------------------------------
--- hyper s to launch of focus on Slack 
+-- hyper s to launch of focus on Slack
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "s", function()
-    hs.application.launchOrFocus("Slack")
+  hs.application.launchOrFocus("Slack")
 end)
 
 -----------------------------------------------
@@ -32,7 +32,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "c", function()
-    hs.application.launchOrFocus("Google Chrome")
+  hs.application.launchOrFocus("Google Chrome")
 end)
 
 -----------------------------------------------
@@ -40,7 +40,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "e", function()
-    hs.application.launchOrFocus("Mail")
+  hs.application.launchOrFocus("Mail")
 end)
 
 -----------------------------------------------
@@ -48,5 +48,5 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "b", function()
-    hs.application.launchOrFocus("Safari")
+  hs.application.launchOrFocus("Safari")
 end)

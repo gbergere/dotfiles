@@ -11,12 +11,12 @@
 -----------------------------------------------
 
 hs.hotkey.bind({}, "f3", function()
-    hs.hints.windowHints()
+  hs.hints.windowHints()
 end)
 
 -----------------------------------------------
 -- F12 to Lock Screen
 -----------------------------------------------
 hs.hotkey.bind({}, "f12", function() 
-    hs.caffeinate.lockScreen()
+  hs.caffeinate.lockScreen()
 end)
