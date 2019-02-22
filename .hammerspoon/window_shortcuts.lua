@@ -28,7 +28,7 @@ hs.hotkey.bind(hyper, "space", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  local width = max.h > smallScreenWidth and 0.65 or 0.95
+  local width = max.h > smallScreenWidth and 0.60 or 0.95
   local height = max.h > smallScreenWidth and 0.85 or 0.95
 
   window.applyLayout(win, {.175,.075, width, height})

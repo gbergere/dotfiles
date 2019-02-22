@@ -54,9 +54,6 @@ set nobackup
 set nowb
 set noswapfile
 
-" Remap Vim's 0 to first non blank character 
-map 0 ^
-
 """
 " NERDTree Plugin
 ""
