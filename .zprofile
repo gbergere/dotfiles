@@ -85,7 +85,7 @@ alias -s ace="unace l"
 # https://github.com/GoogleContainerTools/krew
 # -----------------------------------------------------------------------------
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:${HOME}/.kube/plugins"
 
 ## ----------------------------------------------------------------------------
 # TMUX
