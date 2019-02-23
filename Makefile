@@ -1,28 +1,18 @@
-.DEFAULT_GOAL := install
-.PHONY = install clean install-vim-dep
+.DEFAULT_GOAL := init
+.PHONY = init install-vim-dep
 
-~/.hammerspoon: .hammerspoon
-	ln -s $(PWD)/$^ $@
-
-~/.gitconfig: .gitconfig
-	ln -s $(PWD)/$^ $@
-
-~/.gitignore: .gitignore
-	ln -s $(PWD)/$^ $@
-
-~/.vimrc: .vimrc
-	ln -s $(PWD)/$^ $@
-
-~/.zprofile: .zprofile
-	ln -s $(PWD)/$^ $@
-
-~/.tmux.conf: .tmux.conf
-	ln -s $(PWD)/$^ $@
-
-install: ~/.hammerspoon ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.vimrc ~/.zprofile
+init:
+	# Git
+	ln -svhf $(PWD)/.gitconfig  ~
+	ln -svhf $(PWD)/.gitignore  ~
+	# Hammerpsoon
+	ln -svhf $(PWD)/.hammerspoon  ~
+	ln -svhf $(PWD)/.tmux.conf  ~
+	# Vim
+	ln -svhf $(PWD)/.vimrc  ~
+	# Zsh
+	ln -svhf $(PWD)/.zprofile ~
 
 install-vim-dep:
 	luarocks install luacheck
-
-clean: ~/.hammerspoon ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.vimrc ~/.zprofile
-	rm $^ 
+	ln -svhf $(PWD)/Library/Application\ Support/Luacheck ~/Library/Application\ Support/Luacheck
