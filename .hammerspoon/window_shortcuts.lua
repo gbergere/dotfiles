@@ -5,11 +5,14 @@ local s = require("hs._asm.undocumented.spaces")
 -- Set up
 -----------------------------------------------
 
--- Disable animation transition on windows
-hs.window.animationDuration = 0
-
 local hyper = {"alt", "cmd"}
 local smallScreenWidth = 1200
+
+-----------------------------------------------
+-- hyper s to display info
+-----------------------------------------------
+
+hs.hotkey.showHotkeys(hyper, "s")
 
 -----------------------------------------------
 -- hyper f to maximize the window

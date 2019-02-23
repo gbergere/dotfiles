@@ -10,13 +10,13 @@
 -- F3 to show window hints
 -----------------------------------------------
 
-hs.hotkey.bind({}, "f3", function()
+hs.hotkey.bind({}, "f3", "Show window Hints", function()
   hs.hints.windowHints()
 end)
 
 -----------------------------------------------
 -- F12 to Lock Screen
 -----------------------------------------------
-hs.hotkey.bind({}, "f12", function() 
+hs.hotkey.bind({}, "f12", "Lock Screen", function()
   hs.caffeinate.lockScreen()
 end)
