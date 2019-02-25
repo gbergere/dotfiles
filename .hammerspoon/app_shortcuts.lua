@@ -50,3 +50,11 @@ end)
 hs.hotkey.bind(hyper, "b", "Jump to Safari", function()
   hs.application.launchOrFocus("Safari")
 end)
+
+-----------------------------------------------
+-- hyper i to launch of focus on Messages
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "i", "Jump to Messages", function()
+  hs.application.launchOrFocus("Messages")
+end)
