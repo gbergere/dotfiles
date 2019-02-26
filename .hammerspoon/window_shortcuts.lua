@@ -26,7 +26,7 @@ end)
 -- hyper space to center window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "space", function()
+hs.hotkey.bind(hyper, "b", function()
   local win = hs.window.focusedWindow()
   local screen = win:screen()
   local max = screen:frame()
