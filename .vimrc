@@ -17,7 +17,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugins 
+" Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -127,6 +127,7 @@ let g:ansible_extra_keywords_highlight = 1
 Plugin 'w0rp/ale'
 
 let g:ale_list_window_size = 5 " Show 5 lines of errors (default: 10)
+let g:ale_yaml_yamllint_options = '-c ~/.yamllint'
 
 """
 " Vimux Plugin
@@ -144,7 +145,7 @@ map <leader>vr :VimuxRunLastCommand<cr>
 map <Leader>vq :VimuxCloseRunner<CR>
 
 """
-" Automatically set paste mode 
+" Automatically set paste mode
 "
 " Automatically set paste mode in Vim when pasting in insert mode
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode

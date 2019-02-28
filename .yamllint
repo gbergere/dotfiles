@@ -1,0 +1,12 @@
+---
+
+extends: default
+
+rules:
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+  line-length:
+    level: warning
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
