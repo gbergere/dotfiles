@@ -60,6 +60,7 @@ set noswapfile
 Plugin 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize=40
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 """
 " Terraform Plugin

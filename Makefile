@@ -5,6 +5,7 @@ init:
 	# Git
 	ln -svhf $(PWD)/.gitconfig  ~
 	ln -svhf $(PWD)/.gitignore  ~
+	ln -svhf $(PWD)/.editorconfig ~
 	# Hammerpsoon
 	ln -svhf $(PWD)/.hammerspoon  ~
 	ln -svhf $(PWD)/.tmux.conf  ~
