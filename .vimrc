@@ -26,7 +26,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
-
+Plugin 'google/vim-jsonnet'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
