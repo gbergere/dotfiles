@@ -21,6 +21,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rbong/vim-flog'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'pearofducks/ansible-vim'
@@ -47,7 +48,7 @@ set background=dark
 
 " Higlight 80 chars line and 120 chars and over.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="81,".join(range(121,999),",")
+let &colorcolumn='81,'.join(range(121,999),',')
 
 " Turns backup off so avoid conflicts with git.
 set nobackup
@@ -106,8 +107,8 @@ let g:ctrlp_user_command = {
   \ }
 
 " Ansible config
-let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
-let g:ansible_attribute_highlight = "ob"
+let g:ansible_extra_syntaxes = 'sh.vim ruby.vim'
+let g:ansible_attribute_highlight = 'ob'
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
 
@@ -133,9 +134,9 @@ let g:ale_yaml_yamllint_options = '-c ~/.yamllint'
 " Vimux Plugin
 ""
 Plugin 'benmills/vimux'
-let g:VimuxPromptString = ">>"
-let g:VimuxOrientation = "h"
-let g:VimuxHeight = "25"
+let g:VimuxPromptString = '>>'
+let g:VimuxOrientation = 'h'
+let g:VimuxHeight = '25'
 
 " Run a given command
 map <leader>ve :VimuxPromptCommand<cr>
@@ -167,7 +168,7 @@ let &t_EI .= "\<Esc>[?2004l"
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
   set paste
-  return ""
+  return ''
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
