@@ -37,7 +37,16 @@ filetype plugin indent on    " required
 "	Vim configuration
 ""
 
+let mapleader = ','
+
 syntax on
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+
+let g:NERDSpaceDelims = 1         " Add spaces after comment delimiters by default
+set nojoinspaces                  " Use one space, not two, after punctuation.
 
 set t_Co=256
 set number relativenumber
@@ -46,6 +55,13 @@ set smarttab
 set expandtab
 set autoindent
 set background=dark
+set spelllang=en_gb
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Higlight 80 chars line and 120 chars and over.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
