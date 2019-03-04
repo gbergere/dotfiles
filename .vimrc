@@ -28,6 +28,7 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'google/vim-jsonnet'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,7 +40,7 @@ filetype plugin indent on    " required
 syntax on
 
 set t_Co=256
-set number
+set number relativenumber
 set tabstop=2
 set smarttab
 set expandtab
