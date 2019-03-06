@@ -24,9 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rbong/vim-flog'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
-Plugin 'pearofducks/ansible-vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'google/vim-jsonnet'
@@ -119,11 +117,19 @@ let g:ctrlp_user_command = {
   \ 'fallback': 'find %s -type f'
   \ }
 
-" Ansible config
+"""
+" Vim Ansible Plugin
+""
+Plugin 'pearofducks/ansible-vim'
 let g:ansible_extra_syntaxes = 'sh.vim ruby.vim'
 let g:ansible_attribute_highlight = 'ob'
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
+
+"""
+" Vim GitGutter Plugin
+""
+Plugin 'airblade/vim-gitgutter'
 
 """
 " ALE Plugin
