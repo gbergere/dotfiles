@@ -58,3 +58,11 @@ end)
 hs.hotkey.bind(hyper, "i", "Jump to Messages", function()
   hs.application.launchOrFocus("Messages")
 end)
+
+-----------------------------------------------
+-- hyper w to launch of focus on WhatsApp
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "w", "Jump to WhatsApp", function()
+  hs.application.launchOrFocus("WhatsApp")
+end)
