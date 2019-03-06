@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 """
 "	Vundle Plugin Manager
 "
@@ -10,11 +13,10 @@
 " see :h vundle for more details or wiki for FAQ
 ""
 
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
@@ -34,7 +36,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 """
-"	Vim configuration
+" General	Vim configuration
 ""
 
 let mapleader = ','
@@ -57,19 +59,13 @@ set autoindent
 set background=dark
 set spelllang=en_gb
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Higlight 80 chars line and 120 chars and over.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn='81,'.join(range(121,999),',')
 
 " Turns backup off so avoid conflicts with git.
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 """
@@ -153,7 +149,7 @@ let g:ale_yaml_yamllint_options = '-c ~/.yamllint'
 Plugin 'benmills/vimux'
 let g:VimuxPromptString = '>>'
 let g:VimuxOrientation = 'h'
-let g:VimuxHeight = '25'
+let g:VimuxHeight = '30'
 
 " Run a given command
 map <leader>ve :VimuxPromptCommand<cr>
@@ -161,6 +157,10 @@ map <leader>ve :VimuxPromptCommand<cr>
 map <leader>vr :VimuxRunLastCommand<cr>
 " Close vim tmux runner opened by VimuxRunCommand
 map <Leader>vq :VimuxCloseRunner<CR>
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
 
 """
 " Automatically set paste mode
