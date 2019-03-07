@@ -47,7 +47,7 @@ let g:NERDSpaceDelims = 1         " Add spaces after comment delimiters by defau
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
 set t_Co=256
-set number relativenumber
+set number " relativenumber
 set tabstop=2
 set smarttab
 set expandtab

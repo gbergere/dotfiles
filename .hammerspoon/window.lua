@@ -40,15 +40,19 @@ end
 -----------------------------------------------
 
 module.layout = {
-  maximized   = hs.layout.maximized,
-  left50      = hs.layout.left50,
-  right50     = hs.layout.right50,
-  left75      = {  0,  0,.75,  1},
-  right25     = {.75,  0,.25,  1},
-  topLeft     = {  0,  0, .5, .5},
-  topRight    = { .5,  0, .5, .5},
-  bottomLeft  = {  0, .5, .5, .5},
-  bottomRight = { .5, .5, .5, .5}
+  maximized    = hs.layout.maximized,
+  left50       = hs.layout.left50,
+  right50      = hs.layout.right50,
+  left40       = {  0,  0,.40,  1},
+  left75       = {  0,  0,.75,  1},
+  right25      = {.75,  0,.25,  1},
+  right60      = {.40,  0,.60,  1},
+  topLeft      = {  0,  0, .5, .5},
+  topLeft40    = {  0,  0, .4, .5},
+  topRight     = { .5,  0, .5, .5},
+  bottomLeft   = {  0, .5, .5, .5},
+  bottomLeft40 = {  0, .5, .4, .5},
+  bottomRight  = { .5, .5, .5, .5}
 }
 
 module.applyLayout = function(win, layout)

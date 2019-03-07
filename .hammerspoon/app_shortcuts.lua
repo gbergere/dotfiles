@@ -3,9 +3,12 @@
 -----------------------------------------------
 -- Alt + t -- Terminal
 -- Alt + s -- Slack
--- Alt + c -- Google Chrome
+-- Alt + g -- Google Chrome
 -- Alt + e -- Mail
 -- Alt + b -- Safari
+-- Alt + i -- Messages
+-- Alt + w -- WhatsApp
+-- Alt + m -- iTunes
 -----------------------------------------------
 
 local hyper = {"alt"}
@@ -28,10 +31,10 @@ hs.hotkey.bind(hyper, "s", "Jump to Slack", function()
 end)
 
 -----------------------------------------------
--- hyper c to launch of focus on Chrome
+-- hyper g to launch of focus on Chrome
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "c", "Jump to Google Chrome", function()
+hs.hotkey.bind(hyper, "g", "Jump to Google Chrome", function()
   hs.application.launchOrFocus("Google Chrome")
 end)
 
@@ -65,4 +68,12 @@ end)
 
 hs.hotkey.bind(hyper, "w", "Jump to WhatsApp", function()
   hs.application.launchOrFocus("WhatsApp")
+end)
+
+-----------------------------------------------
+-- hyper m to launch of focus on iTunes
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "m", "Jump to iTunes", function()
+  hs.application.launchOrFocus("iTunes")
 end)

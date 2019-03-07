@@ -14,18 +14,18 @@ local smallScreenWidth = 1200
 hs.hotkey.showHotkeys(hyper, "s")
 
 -----------------------------------------------
--- hyper f to maximize the window
+-- hyper shift f to maximize the window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "f", function()
+hs.hotkey.bind(table.concat(hyper, "shift"), "f", function()
   window.applyLayout(hs.window.focusedWindow(), window.layout.maximized)
 end)
 
 -----------------------------------------------
--- hyper space to center window
+-- hyper f to center window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "b", function()
+hs.hotkey.bind(hyper, "f", function()
   local win = hs.window.focusedWindow()
   local screen = win:screen()
   local max = screen:frame()
@@ -96,18 +96,49 @@ hs.hotkey.bind(hyper, "c", function()
 end)
 
 -----------------------------------------------
---- hyper 4 for top right left-half quarter window
+--- hyper + Shift d for top left40 window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "4", function()
+hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.left40)
+end)
+
+-----------------------------------------------
+--- hyper + Shift g for top right60 window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "g", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.right60)
+end)
+
+-----------------------------------------------
+--- hyper + Shift r for top topLeft40 window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "r", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.topLeft40)
+end)
+
+-----------------------------------------------
+--- hyper + Shift c for top bottomLeft40 window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "c", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.bottomLeft40)
+end)
+-----------------------------------------------
+--- hyper + Shift t for top right left-half quarter window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "t", function()
   window.applyLayout(hs.window.focusedWindow(), {.5, 0, .25, .5})
 end)
 
 -----------------------------------------------
--- hyper 5 for top right right-half quarter window
+-- hyper + Shift y for top right right-half quarter window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "5", function()
+hs.hotkey.bind(table.concat(hyper, "shift"), "y", function()
   window.applyLayout(hs.window.focusedWindow(), {.75, 0, .25, .5})
 end)
 
