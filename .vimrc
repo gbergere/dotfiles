@@ -37,8 +37,6 @@ filetype plugin indent on    " required
 " General	Vim configuration
 ""
 
-let mapleader = ','
-
 syntax on
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -165,8 +163,6 @@ map <leader>vr :VimuxRunLastCommand<cr>
 map <Leader>vq :VimuxCloseRunner<CR>
 " Interrupt any command running in the runner pane
 map <Leader>vx :VimuxInterruptRunner<CR>
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-map <Leader>vz :call VimuxZoomRunner()<CR>
 
 """
 " Automatically set paste mode
