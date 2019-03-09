@@ -3,13 +3,8 @@ root = true
 
 [*]
 trim_trailing_whitespace = true
-indent_size = 2
-
-[*.sh]
-indent_size = 4
-
-[*.{json,jsonnet}]
 indent_size = 4
 
 [*.{yml,yaml}]
 indent_style = space
+indent_size = 2

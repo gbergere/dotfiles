@@ -1,6 +1,7 @@
 # MacOSX/Linux
 *.swp
 *.swo
+.DS_Store
 
 # Binaries
 *.zip
