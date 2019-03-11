@@ -152,8 +152,6 @@ let g:ale_yaml_yamllint_options = '-c ~/.yamllint'
 ""
 Plugin 'benmills/vimux'
 let g:VimuxPromptString = '>>'
-let g:VimuxOrientation = 'h'
-let g:VimuxHeight = '30'
 
 " Run a given command
 map <leader>ve :VimuxPromptCommand<cr>
