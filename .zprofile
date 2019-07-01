@@ -5,7 +5,7 @@
 ##	  author : gbergere (Geoffrey BERGERET)
 ##	  version : 1.2
 ##	  date : 07/09/2016
-##	  
+##
 ## ----------------------------------------------------------------------------
 
 ## ----------------------------------------------------------------------------
@@ -14,7 +14,7 @@
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export PS1=$'%B%n%b@%B%m%b:[%~]%(?.. (%?%))\n>> ' 
+export PS1=$'%B%n%b@%B%m%b:[%~]%(?.. (%?%))\n>> '
 export EDITOR="vim"
 
 bindkey -e # Fix Ctrl-A unbinding.
@@ -48,6 +48,15 @@ alias less="less -x4SRFX"
 alias grep="grep --color=auto -I"
 alias grep_search="grep -Eir " # extended regex, recursive, ignore case, show line number
 alias diff="colordiff -y --suppress-common-lines "              # requires colordiff package
+
+# Git Alias to merge a branch from an approved PR
+function gmerge() {
+    git co master && \
+    git rebase $1 && \
+    git push origin master && \
+    git br -d $1 && \
+    git push origin :$1
+}
 
 # Global aliases
 alias -g H="| head"
