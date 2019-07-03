@@ -47,12 +47,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
-  local win = hs.window.focusedWindow()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  local layout = max.h > smallScreenWidth and window.layout.left50 or window.layout.left75
-  window.applyLayout(hs.window.focusedWindow(), layout)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.left50)
 end)
 
 -----------------------------------------------
@@ -108,12 +103,7 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "g", function()
-  local win = hs.window.focusedWindow()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  local layout = max.h > smallScreenWidth and window.layout.right50 or window.layout.right25
-  window.applyLayout(hs.window.focusedWindow(), layout)
+  window.applyLayout(hs.window.focusedWindow(), window.layout.right50)
 end)
 
 -----------------------------------------------
