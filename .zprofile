@@ -89,6 +89,16 @@ alias -s tar="tar tf"
 alias -s tar.gz="echo "
 alias -s ace="unace l"
 
+
+## ----------------------------------------------------------------------------
+# Google Cloud SDK config
+# -----------------------------------------------------------------------------
+
+if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ]
+then
+    . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+fi
+
 ## ----------------------------------------------------------------------------
 # krew (package manager for kubectl plugins)
 # https://github.com/GoogleContainerTools/krew
