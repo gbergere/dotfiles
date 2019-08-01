@@ -163,6 +163,14 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vx :VimuxInterruptRunner<CR>
 
 """
+" Prettier Plugin (JS Formater)
+""
+Plugin 'prettier/vim-prettier'
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre,InsertLeave *.js,*.jsx,*.ts,*.tsx Prettier
+
+"""
 " Automatically set paste mode
 "
 " Automatically set paste mode in Vim when pasting in insert mode
