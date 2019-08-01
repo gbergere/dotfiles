@@ -12,6 +12,7 @@ init:
 	ln -svhf $(PWD)/.tmux.conf  ~
 	# Vim
 	ln -svhf $(PWD)/.vimrc  ~
+	ln -svhf $(PWD)/.vim  ~
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 
