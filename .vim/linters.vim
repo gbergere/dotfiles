@@ -1,4 +1,10 @@
 """
+" Linters
+""
+Plugin 'google/vim-jsonnet'
+Plugin 'editorconfig/editorconfig-vim'
+
+"""
 " ALE Plugin
 "
 " Use :

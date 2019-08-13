@@ -26,8 +26,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rbong/vim-flog'
 Plugin 'godlygeek/tabular'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'google/vim-jsonnet'
 Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
