@@ -1,79 +1,79 @@
 -----------------------------------------------
 -- App Shortcuts with Alt + Cmd
 -----------------------------------------------
--- Alt + t -- Terminal
--- Alt + s -- Slack
--- Alt + g -- Google Chrome
--- Alt + e -- Mail
--- Alt + b -- Safari
--- Alt + i -- Messages
--- Alt + w -- WhatsApp
--- Alt + m -- iTunes
+-- Alt + 1 -- Mail
+-- Alt + 2 -- Slack
+-- Alt + 3 -- Google Chrome
+-- Alt + 4 -- Terminal
+-- Alt + 7 -- iTunes
+-- Alt + 8 -- WhatsApp
+-- Alt + 9 -- Messages
+-- Alt + 0 -- Safari
 -----------------------------------------------
 
-local hyper = {"alt"}
+local hyper = {"ctrl", "cmd"}
 
 -----------------------------------------------
--- hyper t to launch of focus on Terminal
+-- hyper 1 to launch of focus on Mail
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "t", "Jump to Terminal", function()
+hs.hotkey.bind(hyper, "1", "Jump to Mail", function()
+  hs.application.launchOrFocus("Mail")
+end)
+
+-----------------------------------------------
+-- hyper 2 to launch of focus on Slack
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "2", "Jump to Slack", function()
+  hs.application.launchOrFocus("Slack")
+end)
+
+-----------------------------------------------
+-- hyper 3 to launch of focus on Chrome
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "3", "Jump to Google Chrome", function()
+  hs.application.launchOrFocus("Google Chrome")
+end)
+
+-----------------------------------------------
+-- hyper 4 to launch of focus on Terminal
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "4", "Jump to Terminal", function()
   hs.application.launchOrFocus("Terminal")
   -- @TODO Full Screen
 end)
 
 -----------------------------------------------
--- hyper s to launch of focus on Slack
+-- hyper 7 to launch of focus on iTunes
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "s", "Jump to Slack", function()
-  hs.application.launchOrFocus("Slack")
+hs.hotkey.bind(hyper, "7", "Jump to iTunes", function()
+  hs.application.launchOrFocus("iTunes")
 end)
 
 -----------------------------------------------
--- hyper g to launch of focus on Chrome
+-- hyper 8 to launch of focus on WhatsApp
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "g", "Jump to Google Chrome", function()
-  hs.application.launchOrFocus("Google Chrome")
-end)
-
------------------------------------------------
--- hyper e to launch of focus on Mail
------------------------------------------------
-
-hs.hotkey.bind(hyper, "e", "Jump to Mail", function()
-  hs.application.launchOrFocus("Mail")
-end)
-
------------------------------------------------
--- hyper b to launch of focus on Safari
------------------------------------------------
-
-hs.hotkey.bind(hyper, "b", "Jump to Safari", function()
-  hs.application.launchOrFocus("Safari")
-end)
-
------------------------------------------------
--- hyper i to launch of focus on Messages
------------------------------------------------
-
-hs.hotkey.bind(hyper, "i", "Jump to Messages", function()
-  hs.application.launchOrFocus("Messages")
-end)
-
------------------------------------------------
--- hyper w to launch of focus on WhatsApp
------------------------------------------------
-
-hs.hotkey.bind(hyper, "w", "Jump to WhatsApp", function()
+hs.hotkey.bind(hyper, "8", "Jump to WhatsApp", function()
   hs.application.launchOrFocus("WhatsApp")
 end)
 
 -----------------------------------------------
--- hyper m to launch of focus on iTunes
+-- hyper 9 to launch of focus on Messages
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "m", "Jump to iTunes", function()
-  hs.application.launchOrFocus("iTunes")
+hs.hotkey.bind(hyper, "9", "Jump to Messages", function()
+  hs.application.launchOrFocus("Messages")
+end)
+
+-----------------------------------------------
+-- hyper 0 to launch of focus on Safari
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "0", "Jump to Safari", function()
+  hs.application.launchOrFocus("Safari")
 end)

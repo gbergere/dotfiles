@@ -4,7 +4,7 @@ local window = require("window")
 -- Set up
 -----------------------------------------------
 
-local hyper = {"alt", "cmd"}
+local hyper = {"ctrl", "cmd"}
 local smallScreenWidth = 1200
 
 -----------------------------------------------
@@ -32,22 +32,6 @@ hs.hotkey.bind(hyper, "f", function()
     window.applyLayout(win, window.layout.maximized)
   end
 
-end)
-
------------------------------------------------
--- hyper shift f to maximize the window
------------------------------------------------
-
-hs.hotkey.bind(table.concat(hyper, "shift"), "f", function()
-  window.applyLayout(hs.window.focusedWindow(), window.layout.maximized)
-end)
-
------------------------------------------------
--- hyper d for left one half window
------------------------------------------------
-
-hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
-  window.applyLayout(hs.window.focusedWindow(), window.layout.left50)
 end)
 
 -----------------------------------------------
@@ -96,6 +80,22 @@ end)
 
 hs.hotkey.bind(hyper, "t", function()
   window.applyLayout(hs.window.focusedWindow(), window.layout.topRight60)
+end)
+
+-----------------------------------------------
+-- hyper shift f to maximize the window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "f", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.maximized)
+end)
+
+-----------------------------------------------
+-- hyper d for left one half window
+-----------------------------------------------
+
+hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.left50)
 end)
 
 -----------------------------------------------
