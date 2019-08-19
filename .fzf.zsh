@@ -1,5 +1,8 @@
 # Setup fzf
 # ---------
+
+export FZF_TMUX_HEIGHT="25%"
+
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi

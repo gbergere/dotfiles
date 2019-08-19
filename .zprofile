@@ -1,13 +1,3 @@
-#### --------------------------------------------------------------------------
-##
-## 	.zprofile for user (Used on Mac OS X)
-##
-##	  author : gbergere (Geoffrey BERGERET)
-##	  version : 1.2
-##	  date : 07/09/2016
-##
-## ----------------------------------------------------------------------------
-
 ## ----------------------------------------------------------------------------
 # CONFIGS
 # -----------------------------------------------------------------------------
@@ -24,14 +14,17 @@ bindkey -e # Fix Ctrl-A unbinding.
 # -----------------------------------------------------------------------------
 
 export HISTFILE="${HOME}/.zhistory"
-export HISTSIZE=1000
-export SAVEHIST=1000
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_SAVE_NO_DUPS
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
 
 ## ----------------------------------------------------------------------------
 # ZSH GIT COMPLETION
@@ -105,13 +98,6 @@ fi
 
 # fzf for ZSH ~/.fzf.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## ----------------------------------------------------------------------------
-# krew (package manager for kubectl plugins)
-# https://github.com/GoogleContainerTools/krew
-# -----------------------------------------------------------------------------
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:${HOME}/.kube/plugins"
 
 ## ----------------------------------------------------------------------------
 # TMUX

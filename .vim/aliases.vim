@@ -18,7 +18,7 @@ set expandtab
 set autoindent
 set background=dark
 set spelllang=en_gb
-set hlsearch            " Highlight matching values on search terms
+set hlsearch            " Highlight all search matches
 set incsearch           " Highlight matching values on search as you type
 
 " Higlight 80 chars line and 120 chars and over.
@@ -69,7 +69,7 @@ let g:ctrlp_user_command = {
     \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
     \ 2: ['.hg', 'hg --cwd %s locate -I .'],
   \ },
-  \ 'fallback': 'find %s -type f'
+  \ 'fallback': 'find %s -type f -maxdepth 3'
   \ }
 
 """
