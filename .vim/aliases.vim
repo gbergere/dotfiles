@@ -11,13 +11,15 @@ let g:NERDSpaceDelims = 1         " Add spaces after comment delimiters by defau
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
 set t_Co=256
-set number " relativenumber
+set number              " relativenumber
 set tabstop=2
 set smarttab
 set expandtab
 set autoindent
 set background=dark
 set spelllang=en_gb
+set hlsearch            " Highlight matching values on search terms
+set incsearch           " Highlight matching values on search as you type
 
 " Higlight 80 chars line and 120 chars and over.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
