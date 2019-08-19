@@ -18,8 +18,6 @@ set expandtab
 set autoindent
 set background=dark
 set spelllang=en_gb
-set hlsearch            " Highlight all search matches
-set incsearch           " Highlight matching values on search as you type
 
 " Higlight 80 chars line and 120 chars and over.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
