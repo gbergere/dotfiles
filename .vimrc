@@ -34,3 +34,4 @@ filetype plugin indent on    " required
 source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
+source ~/.vim/misc.vim
