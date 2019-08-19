@@ -91,13 +91,20 @@ alias -s ace="unace l"
 
 
 ## ----------------------------------------------------------------------------
-# Google Cloud SDK config
+# Source Dependencies
 # -----------------------------------------------------------------------------
 
+# Google Cloud SDK
 if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ]
 then
     . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
+
+# ~/.zenv
+[ -f ~/.zenv ] && source ~/.zenv
+
+# fzf for ZSH ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## ----------------------------------------------------------------------------
 # krew (package manager for kubectl plugins)
@@ -119,9 +126,3 @@ then
 else
 	tmux new-session -s main
 fi
-
-## ----------------------------------------------------------------------------
-# source ~/.zenv
-# -----------------------------------------------------------------------------
-
-[ -f ~/.zenv ] && source ~/.zenv

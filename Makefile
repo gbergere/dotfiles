@@ -15,6 +15,7 @@ init:
 	ln -svhf $(PWD)/.vim  ~
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
+	ln -svhf $(PWD)/.fzf.zsh ~
 
 install-vim-dep:
 	luarocks install luacheck
