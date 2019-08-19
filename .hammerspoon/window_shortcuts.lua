@@ -26,8 +26,7 @@ hs.hotkey.bind(hyper, "f", function()
     local width = .60
     local height = .85
 
-    window.applyLayout(win, {.175,.075, width, height})
-    win:centerOnScreen(screen)
+    window.applyLayout(win, {(1 - width) / 2, (1 - height) / 2, width, height})
   else
     window.applyLayout(win, window.layout.maximized)
   end
