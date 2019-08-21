@@ -18,5 +18,6 @@ init:
 	ln -svhf $(PWD)/.fzf.zsh ~
 
 install-vim-dep:
+	[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	luarocks install luacheck
 	ln -svhf $(PWD)/Library/Application\ Support/Luacheck ~/Library/Application\ Support/Luacheck
