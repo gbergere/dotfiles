@@ -19,6 +19,9 @@ init:
 	# GPG
 	ln -svhf $(PWD)/.gnupg/* ~/.gnupg
 
+	# Install all brew packages
+	brew bundle
+
 install-vim-dep:
 	[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	luarocks install luacheck
