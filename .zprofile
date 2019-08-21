@@ -6,6 +6,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1=$'%B%n%b@%B%m%b:[%~]%(?.. (%?%))\n>> '
 export EDITOR="vim"
+export GPG_TTY=`tty`
 
 bindkey -e # Fix Ctrl-A unbinding.
 

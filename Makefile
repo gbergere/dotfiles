@@ -16,6 +16,8 @@ init:
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~
+	# GPG
+	ln -svhf $(PWD)/.gnupg/* ~/.gnupg
 
 install-vim-dep:
 	[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
