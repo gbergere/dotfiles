@@ -12,7 +12,7 @@ brew "watch"
 
 # GPG
 brew "gnupg"
-brew "gpg2"
+brew "gpg"
 brew "pinentry-mac"
 
 # DevOps

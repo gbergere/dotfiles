@@ -1,7 +1,7 @@
-.DEFAULT_GOAL := init
+.DEFAULT_GOAL := init-home
 .PHONY = init install-vim-dep
 
-init:
+init-home:
 	# Git
 	ln -svhf $(PWD)/.gitconfig  ~
 	ln -svhf $(PWD)/.gitignore  ~
@@ -21,6 +21,9 @@ init:
 
 	# Install all brew packages
 	brew bundle
+
+install-brew:
+	[ ! -f /usr/local/bin/brew ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 install-vim-dep:
 	[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

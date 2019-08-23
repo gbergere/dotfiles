@@ -11,3 +11,5 @@
 	rebase = true
 [commit]
 	gpgSign = true
+[gpg]
+	program = gpg
