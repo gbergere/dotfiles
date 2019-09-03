@@ -17,6 +17,7 @@ brew "pinentry-mac"
 
 # DevOps
 brew "awscli"
+brew "circleci"
 cask "google-cloud-sdk"
 brew "jsonnet"
 brew "kubernetes-cli"
