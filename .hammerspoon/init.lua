@@ -28,7 +28,8 @@ require("fn_shortcuts")
 require("window_shortcuts")
 
 -- Tests
-require("window_modal")
+require("modals/window")
+require("modals/vim")
 
 -----------------------------------------------
 -- Defeating paste blocking (when shift)

@@ -5,8 +5,8 @@
 ----------------------------------------------
 
 -- Imports
-local window = require("window")
-local status = require("status_display")
+local window = require("../window")
+local status = require("../status_display")
 
 -- Variables
 local smallScreenWidth = 1200
