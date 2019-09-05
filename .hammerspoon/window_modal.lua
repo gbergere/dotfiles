@@ -18,7 +18,7 @@ local smallScreenWidth = 1200
 local window_manager = hs.hotkey.modal.new()
 window_manager_modal = hs.hotkey.bind({"alt"}, "w", function()
     window_manager:enter()
-    status:show("window manager on")
+    status:show("WINDOW MANAGER")
 end)
 
 window_manager:bind({}, 'escape', function()
@@ -74,6 +74,22 @@ end)
 
 window_manager:bind({}, "g", function()
   window.applyLayout(hs.window.focusedWindow(), window.layout.right60)
+end)
+
+-----------------------------------------------
+-- e for top up50 window
+-----------------------------------------------
+
+window_manager:bind({}, "e", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.up50)
+end)
+
+-----------------------------------------------
+-- x for top bottom50 window
+-----------------------------------------------
+
+window_manager:bind({}, "x", function()
+  window.applyLayout(hs.window.focusedWindow(), window.layout.bottom50)
 end)
 
 -----------------------------------------------
