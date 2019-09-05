@@ -3,7 +3,7 @@
 -----------------------------------------------
 
 -- Disable animation transition on windows
-hs.window.animationDuration = 0
+hs.window.animationDuration = 0.05
 -- Disable alert on hotkey trigger
 hs.hotkey.alertDuration = 0
 
