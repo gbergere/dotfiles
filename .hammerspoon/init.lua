@@ -27,6 +27,9 @@ require("app_watcher")
 require("fn_shortcuts")
 require("window_shortcuts")
 
+-- Tests
+require("window_modal")
+
 -----------------------------------------------
 -- Defeating paste blocking (when shift)
 -----------------------------------------------
