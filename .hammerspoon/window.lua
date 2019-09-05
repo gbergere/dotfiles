@@ -22,7 +22,7 @@ module.resize = {
   bigger  = {  0,  0, .1,  0}
 }
 
-module.moveAndResize = function(win, action)
+function module:moveAndResize(win, action)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -46,8 +46,6 @@ module.layout = {
   up50          = {  0,  0,  1, .5},
   bottom50      = {  0, .5,  1, .5},
   left40        = {  0,  0,.40,  1},
-  left75        = {  0,  0,.75,  1},
-  right25       = {.75,  0,.25,  1},
   right60       = {.40,  0,.60,  1},
   topLeft       = {  0,  0, .5, .5},
   topLeft40     = {  0,  0, .4, .5},
@@ -59,10 +57,8 @@ module.layout = {
   bottomRight60 = { .4, .5, .6, .5}
 }
 
-module.applyLayout = function(win, layout)
-  hs.layout.apply({
-    {nil, win, win:screen(), layout, nil, nil}
-  })
+function module:applyLayout(win, layout)
+  hs.layout.apply({{nil, win, win:screen(), layout, nil, nil}})
 end
 
 -- Return functions
