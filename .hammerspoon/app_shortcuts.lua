@@ -1,5 +1,5 @@
 -----------------------------------------------
--- App Shortcuts with Alt
+-- App Shortcuts with Cmd
 -----------------------------------------------
 -- Alt + 1 -- Mail
 -- Alt + 2 -- Slack
@@ -11,7 +11,7 @@
 -- Alt + 0 -- Safari
 -----------------------------------------------
 
-local hyper = {"alt"}
+local hyper = {"cmd"}
 
 -----------------------------------------------
 -- hyper 1 to launch of focus on Mail
