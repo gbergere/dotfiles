@@ -21,13 +21,9 @@ window_manager_modal = hs.hotkey.bind({"alt"}, "w", function()
     status:show("WINDOW MANAGER")
 end)
 
-window_manager:bind({}, 'escape', function()
+window_manager:bind({"alt"}, 'w', function()
     window_manager:exit()
     status:clear()
-end)
-
-window_manager:bind({"alt"}, 'w', function()
-    -- Unbind Alt + w while in the modal
 end)
 
 -- Disable modal on Terminal
