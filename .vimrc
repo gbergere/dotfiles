@@ -35,3 +35,7 @@ source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
 source ~/.vim/misc.vim
+
+if has('nvim')
+    source ~/.vim/nvim.vim
+endif

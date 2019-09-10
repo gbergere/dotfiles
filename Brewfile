@@ -24,6 +24,7 @@ brew "kubernetes-cli"
 brew "terraform"
 
 # Vim linters
+brew "nvim"
 brew "luarocks"
 brew "shellcheck"
 brew "yamllint"
