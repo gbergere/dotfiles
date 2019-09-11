@@ -7,6 +7,10 @@ hs.window.animationDuration = 0.05
 -- Disable alert on hotkey trigger
 hs.hotkey.alertDuration = 0
 
+
+hs.autoLaunch(true)
+hs.dockIcon(false)
+
 -----------------------------------------------
 -- Reload config on write
 -----------------------------------------------
@@ -25,10 +29,9 @@ hs.alert.show("Config loaded")
 require("app_shortcuts")
 require("app_watcher")
 require("fn_shortcuts")
-require("window_shortcuts")
+require("modals/window")
 
 -- Tests
-require("modals/window")
 require("modals/vim")
 
 -----------------------------------------------
