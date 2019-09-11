@@ -41,7 +41,6 @@ zmodload -i zsh/complist
 alias less="less -x4SRFX"
 alias grep="grep --color=auto -I"
 alias grep_search="grep -Eir " # extended regex, recursive, ignore case, show line number
-alias diff="colordiff -y --suppress-common-lines "              # requires colordiff package
 
 # Git Alias to merge a branch from an approved PR
 function gmerge() {
