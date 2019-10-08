@@ -5,7 +5,7 @@
 -- Alt + 2 -- Slack
 -- Alt + 3 -- Google Chrome
 -- Alt + 4 -- Terminal
--- Alt + 7 -- iTunes
+-- Alt + 7 -- Music
 -- Alt + 8 -- WhatsApp
 -- Alt + 9 -- Messages
 -- Alt + 0 -- Safari
@@ -47,11 +47,11 @@ hs.hotkey.bind(hyper, "4", "Jump to Terminal", function()
 end)
 
 -----------------------------------------------
--- hyper 7 to launch of focus on iTunes
+-- hyper 7 to launch of focus on Music
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "7", "Jump to iTunes", function()
-  hs.application.launchOrFocus("iTunes")
+hs.hotkey.bind(hyper, "7", "Jump to Music", function()
+  hs.application.launchOrFocus("Music")
 end)
 
 -----------------------------------------------
