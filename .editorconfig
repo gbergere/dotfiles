@@ -11,8 +11,9 @@ indent_style = space
 [*.js]
 indent_size = 2
 
-[*.{json,jsonnet}]
+[*.{json,jsonnet,libsonnet}]
 insert_final_newline = true
+indent_size = 2
 
 [*.tf]
 indent_size = 2
