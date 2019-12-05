@@ -31,6 +31,7 @@ Plugin 'scrooloose/nerdcommenter'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+source ~/.vim/basics.vim
 source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
