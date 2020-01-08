@@ -11,7 +11,7 @@
 -- Alt + 0 -- Safari
 -----------------------------------------------
 
-local hyper = {"cmd"}
+local hyper = {"ctrl", "cmd"}
 
 -----------------------------------------------
 -- hyper 1 to launch of focus on Mail
