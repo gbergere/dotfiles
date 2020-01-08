@@ -29,10 +29,7 @@ hs.alert.show("Config loaded")
 require("app_shortcuts")
 require("app_watcher")
 require("fn_shortcuts")
-require("modals/window")
-
--- Tests
-require("modals/vim")
+require("window_shortcuts")
 
 -----------------------------------------------
 -- Defeating paste blocking (when shift)
