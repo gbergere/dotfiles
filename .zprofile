@@ -66,7 +66,7 @@ alias -g NUL="> /dev/null"
 alias -g P="2>&1 | pygmentize -l pytb"
 alias -g S="sudo "
 alias -g GS="grep_search "
-alias -g PR="2>&1 | tee /dev/tty | grep -oE 'https://.*' | xargs open"
+alias -g PR="2>&1 | tee /dev/tty | grep -oE 'https://.*' | xargs open -a Google\ Chrome"
 
 # Suffix aliases
 alias -s md="vim"
