@@ -27,7 +27,6 @@ hs.alert.show("Config loaded")
 -----------------------------------------------
 
 require("app_shortcuts")
-require("app_watcher")
 require("fn_shortcuts")
 require("window_shortcuts")
 
