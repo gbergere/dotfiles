@@ -54,7 +54,17 @@ module.layout = {
     bottomLeft    = {  0, .5, .5, .5},
     bottomLeft40  = {  0, .5, .4, .5},
     bottomRight   = { .5, .5, .5, .5},
-    bottomRight60 = { .4, .5, .6, .5}
+    bottomRight60 = { .4, .5, .6, .5},
+
+    -- Layout for wideScreen
+    wideMiddle        = { .3,  0, .4,  1},
+    wideMaximized     = { .2,  0, .6,  1},
+    wideLeft          = {  0,  0, .3,  1},
+    wideRight         = { .7,  0, .3,  1},
+    wideTopLeft       = {  0,  0, .3, .5},
+    wideTopRight      = { .7,  0, .3, .5},
+    wideBottomLeft    = {  0, .5, .3, .5},
+    wideBottomRight   = { .7, .5, .3, .5}
 }
 
 function module:applyLayout(win, layout)
