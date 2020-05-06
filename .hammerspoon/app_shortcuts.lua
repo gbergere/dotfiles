@@ -47,11 +47,19 @@ hs.hotkey.bind(hyper, "4", "Jump to Terminal", function()
 end)
 
 -----------------------------------------------
+-- hyper 6 to launch of focus on Music
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "6", "Jump to Music", function()
+  hs.application.launchOrFocus("Music")
+end)
+
+-----------------------------------------------
 -- hyper 7 to launch of focus on Music
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "7", "Jump to Music", function()
-  hs.application.launchOrFocus("Music")
+hs.hotkey.bind(hyper, "7", "Jump to Signal", function()
+  hs.application.launchOrFocus("Signal")
 end)
 
 -----------------------------------------------
