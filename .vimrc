@@ -35,4 +35,3 @@ source ~/.vim/basics.vim
 source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
-source ~/.vim/misc.vim
