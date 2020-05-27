@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "heroku/brew"
 
 # Tools
 brew "fzf"
@@ -22,6 +23,7 @@ cask "google-cloud-sdk"
 brew "jsonnet"
 brew "kubernetes-cli"
 brew "terraform"
+brew "heroku"
 
 # Vim linters
 brew "luarocks"
