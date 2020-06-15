@@ -3,10 +3,10 @@
 	st = status -s
   br = branch
 [core]
-	excludesfile = /Users/gbergere/.gitignore
+	excludesfile = ~/.gitignore
 [user]
-	name = Geoffrey Bergeret
-	signingkey = 7BB70D34
+	name = Simon de Villiers
+	email = simon.devilliers@octoenergy.com
 [pull]
 	rebase = true
 [commit]

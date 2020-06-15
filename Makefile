@@ -7,8 +7,7 @@ init-home:
 	ln -svhf $(PWD)/.gitignore  ~
 	ln -svhf $(PWD)/.editorconfig ~
 	ln -svhf $(PWD)/.yamllint ~
-	# Hammerpsoon
-	ln -svhf $(PWD)/.hammerspoon  ~
+	# tmux
 	ln -svhf $(PWD)/.tmux.conf  ~
 	# Vim
 	ln -svhf $(PWD)/.vimrc  ~
@@ -19,7 +18,6 @@ init-home:
 	# GPG
 	[ ! -d ~/.gnupg ] && mkdir ~/.gnupg
 	ln -svhf $(PWD)/.gnupg/* ~/.gnupg
-
 	# Install all brew packages
 	brew bundle
 
