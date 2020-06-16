@@ -14,6 +14,7 @@ init-home:
 	ln -svhf $(PWD)/.vim  ~
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
+	ln -svhf $(PWD)/.zshrc ~
 	ln -svhf $(PWD)/.fzf.zsh ~
 	# Install all brew packages
 	brew bundle
