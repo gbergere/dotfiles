@@ -1,7 +1,7 @@
 [alias]
 	co = checkout
 	st = status -s
-  br = branch
+  	br = branch
 [core]
 	excludesfile = ~/.gitignore
 [user]
@@ -9,9 +9,5 @@
 	email = simon.devilliers@octoenergy.com
 [pull]
 	rebase = true
-[commit]
-	gpgSign = true
-[gpg]
-	program = gpg
 [rebase]
 	autosquash = true
