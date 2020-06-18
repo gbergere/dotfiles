@@ -264,7 +264,7 @@ alias vf='vim `fzf`'
 # For things that can't be commited
 sh ~/.envvars.sh
 
-# zsh autocompletions
+# zsh autocompletions https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
