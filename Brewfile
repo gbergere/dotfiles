@@ -11,7 +11,7 @@ brew "tmux"
 brew "watch"
 
 # DevOps
-brew "awscli"
+# brew "awscli"
 brew "circleci"
 brew "jsonnet"
 brew "terraform"

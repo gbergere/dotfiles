@@ -150,15 +150,15 @@ refresh() {
     input_string="?$CLOUD_DIR$1 not found. Do you want to try cloning https://code.tvac.bt.co.uk/$gitlab_group/$1.git? [y,n] "
     if [ -n "$ZSH_VERSION" ]; then
       # assume Zsh
-      read -k 1 $input_string input 
+      read -k 1 $input_string input
     elif [ -n "$BASH_VERSION" ]; then
       # assume Bash
-      read -n 1 -p $input_string input 
+      read -n 1 -p $input_string input
     fi
-    case $input in  
-      y|Y) echo "\n" && git clone --recursive https://code.tvac.bt.co.uk/$gitlab_group/$1.git ;; 
-      n|N) echo "\nOk, Bye!" ;; 
-      *) echo didn\'t work ;; 
+    case $input in
+      y|Y) echo "\n" && git clone --recursive https://code.tvac.bt.co.uk/$gitlab_group/$1.git ;;
+      n|N) echo "\nOk, Bye!" ;;
+      *) echo didn\'t work ;;
     esac
   fi
 }
@@ -259,6 +259,16 @@ alias dog='pygmentize -g'
 
 alias howmanycommits='git rev-list --count HEAD ^master'
 alias resetbranch='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'
+alias vf='vim `fzf`'
 
 # For things that can't be commited
 sh ~/.envvars.sh
+
+# zsh autocompletions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
