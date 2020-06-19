@@ -27,6 +27,8 @@ Plugin 'rbong/vim-flog'
 Plugin 'godlygeek/tabular'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
