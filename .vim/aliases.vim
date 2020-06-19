@@ -35,6 +35,7 @@ Plugin 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize=40
 let g:NERDTreeNodeDelimiter = "\u00a0"
+map <C-n> :NERDTreeToggle<CR>
 
 """
 " Airline Plugin

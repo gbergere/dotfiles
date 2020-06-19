@@ -5,10 +5,10 @@
         "revision": "4b9a95355a4784a6839821ec58467f8e1ed96ad7"
       },
       "homebrew/cask": {
-        "revision": "73c5959a59149a2a049a01edc7b63718289b87b2"
+        "revision": "7c40ba010b6d4d37fe94301f70f8e681e22521e1"
       },
       "homebrew/core": {
-        "revision": "3ba623328fd2bd092c8793c7e3ca5aa721572d18"
+        "revision": "fd04736e10821cf4a1c0e50efdc30d238769471a"
       },
       "heroku/brew": {
         "revision": "2fbdd513b72119e373505ef0c9047a8090cae7d6"
@@ -172,22 +172,22 @@
         }
       },
       "circleci": {
-        "version": "0.1.7971",
+        "version": "0.1.8302",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.7971.catalina.bottle.tar.gz",
-              "sha256": "8bdd215b938073eebb789f9d021e61158839f8db9ca3dfd7924e68f15c960c5a"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.8302.catalina.bottle.tar.gz",
+              "sha256": "3d81a6969466ca3c2759e8541e51ecf86c35928eb5083eda57b4dbb7c8d16ce2"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.7971.mojave.bottle.tar.gz",
-              "sha256": "b6b287d8409ce94164cca746e1752b86250975e9f08f7572e53f75c12d0df3aa"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.8302.mojave.bottle.tar.gz",
+              "sha256": "82d2510812f148c47bb48c6ae100604d6a6de1c9b0e4b848c2dfeeb653d15012"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.7971.high_sierra.bottle.tar.gz",
-              "sha256": "7f86646638b4992e24897924d8ae47a3b2fb1833773f55af345c70dcf145b3a2"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.8302.high_sierra.bottle.tar.gz",
+              "sha256": "3ac7e0ff8f06a7514280612a71eb67c0af52661561d49976a3e1ae86052f2367"
             }
           }
         }
@@ -304,7 +304,7 @@
       "mojave": {
         "HOMEBREW_VERSION": "2.4.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3ba623328fd2bd092c8793c7e3ca5aa721572d18",
+        "Homebrew/homebrew-core": "fd04736e10821cf4a1c0e50efdc30d238769471a",
         "CLT": "10.3.0.0.1.1562985497",
         "Xcode": "10.3",
         "macOS": "10.14.6"

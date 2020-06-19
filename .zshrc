@@ -260,6 +260,9 @@ alias dog='pygmentize -g'
 alias howmanycommits='git rev-list --count HEAD ^master'
 alias resetbranch='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'
 alias vf='vim `fzf`'
+alias copylast='echo "!!" | pbcopy'
+
+function copy(){ cat $1 | pbcopy }
 
 # For things that can't be commited
 sh ~/.envvars.sh
