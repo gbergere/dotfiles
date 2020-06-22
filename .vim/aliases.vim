@@ -48,17 +48,6 @@ endif
 let g:airline_symbols.branch = '⎇'
 
 """
-" Ack
-""
-Plugin 'mileszs/ack.vim'
-
-cnoreabbrev Ack Ack!
-nnoremap <Leader>f :Ack!<Space>
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-"""
 " CtrlP config
 ""
 Plugin 'ctrlpvim/ctrlp.vim'
