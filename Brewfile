@@ -3,6 +3,8 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "heroku/brew"
 
+cask "1password-cli"
+
 # Tools
 brew "fzf"
 brew "iperf"
@@ -11,7 +13,6 @@ brew "tmux"
 brew "watch"
 
 # DevOps
-# brew "awscli"
 brew "circleci"
 brew "jsonnet"
 brew "terraform"
