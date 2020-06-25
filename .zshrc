@@ -97,17 +97,6 @@ source $ZSH/oh-my-zsh.sh
 
 # source ~/code/cloud/runner-wrapper/local-task-runner.alias.sh
 
-mfa() {
-  dirname=$(pwd);
-  workon cloud;
-  cd ~/code/cloud/iamtools/Environment;
-  python ~/.automfa.py;
-  mfa_code=`cat ~/.automfacode.txt`
-  source autoenvironment.sh;
-  cd $dirname;
-  unset dirname;
-}
-
 rm_submod() {
   git submodule deinit -f $1
   git rm $1
