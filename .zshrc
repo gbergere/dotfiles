@@ -250,6 +250,7 @@ alias howmanycommits='git rev-list --count HEAD ^master'
 alias resetbranch='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'
 alias vf='vim `fzf`'
 alias copylast='echo "!!" | pbcopy'
+alias opsignin='eval $(op signin octoenergy)'
 
 function copy(){ cat $1 | pbcopy }
 
