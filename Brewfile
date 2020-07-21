@@ -18,12 +18,14 @@ brew "pinentry-mac"
 
 # DevOps
 brew "awscli"
+brew "azure-cli"
 brew "circleci"
 cask "google-cloud-sdk"
+brew "heroku"
 brew "jsonnet"
 brew "kubernetes-cli"
+brew "packer"
 brew "terraform"
-brew "heroku"
 
 # Vim linters
 brew "luarocks"
