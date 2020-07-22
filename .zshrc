@@ -182,7 +182,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=$HOME/Envs
 source "$(pyenv which virtualenvwrapper.sh)"
 
-cd ~/code
+cd ~/code/octoenergy
 
 workon kraken-core
 
