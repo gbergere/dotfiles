@@ -26,7 +26,11 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "2", "Jump to Slack", function()
-  hs.application.launchOrFocus("Slack")
+  if hs.application.frontmostApplication():name() == "Slack" then
+    hs.application.launchOrFocus("Microsoft Teams")
+  else
+    hs.application.launchOrFocus("Slack")
+  end
 end)
 
 -----------------------------------------------
