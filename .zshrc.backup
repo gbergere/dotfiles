@@ -252,37 +252,6 @@ alias vf='vim `fzf`'
 alias copylast='echo "!!" | pbcopy'
 alias opsignin='eval $(op signin octoenergy)'
 alias mfa='source ~/mfa.sh'
-alias d='docker'
-alias dc='docker-compose'
-alias de='docker exec -it'
-alias dl='docker logs'
-alias dp='docker ps'
-alias drm='docker rm $(docker ps -a -q)'
-alias g='gcloud'
-alias gc='gcloud compute'
-alias gca='gcloud config configurations activate'
-alias gcci='gcloud config configurations list'
-alias gci='gcloud compute instances list'
-alias gcssh='gcloud compute ssh'
-alias gl='git log --pretty=oneline --abbrev-commit'
-alias htop='sudo htop'
-alias jga='jx get activity -f'
-alias jxb='jx get build logs'
-alias jxs='jx step syntax effective -s'
-alias k='kubectl'
-alias kap='kubectl get pods --all-namespaces'
-alias kapw='kubectl get pods --all-namespaces -w'
-alias kcg='kubectl config get-contexts'
-alias kcu='kubectl config use-context'
-alias ke='kubectl exec -n'
-alias kl='kubectl logs -n'
-alias kp='kubectl get pods -n'
-alias kpf='kubectl port-forward -n'
-alias ll='ls -lh'
-alias mysql='/usr/local/mysql/bin/mysql'
-alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
-alias psg='ps -ef | grep'
-alias watch='watch '
 
 function copy(){ cat $1 | pbcopy }
 
@@ -298,8 +267,3 @@ if type brew &>/dev/null; then
 fi
 
 eval "$(rbenv init -)"
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc'; fi
