@@ -178,6 +178,10 @@ alias g-='git checkout -'
 alias tfdev='cd ~/go/src/github.com/terraform-providers/terraform-provider-aws'
 alias dockercleanup='docker rm -vf $(docker ps -a -q) && docker rmi -f $(docker images -a -q)'
 
+
+export WORKON_HOME=$HOME/Envs
+source "$(pyenv which virtualenvwrapper.sh)"
+
 cd ~/code/octoenergy
 
 workon kraken-core

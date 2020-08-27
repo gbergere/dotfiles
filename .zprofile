@@ -113,13 +113,6 @@ else
 	tmux new-session -s main
 fi
 
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source "$(pyenv which virtualenvwrapper.sh)"
-
-# RabbitMQ
-export PATH=/usr/local/sbin:$PATH
-
 export PATH="$HOME/.cargo/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
