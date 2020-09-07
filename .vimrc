@@ -41,7 +41,7 @@ nmap <leader>f :Files<CR>
 nmap <leader>h :History<CR>
 nmap <leader>l :BLines<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>rg :Rg
+nmap <leader>rg :Rg<CR>
 nmap <leader>t :Tags
 nmap <leader>d :BTags <CR>
 
@@ -49,3 +49,14 @@ nmap <leader>d :BTags <CR>
 nmap <leader>ev :tabe ~/.vimrc<cr>
 nmap <leader>sv :source ~/.vimrc<cr>
 map <Space> <Leader>
+
+" Drop the w for moving between windows and tabs
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" shift h and shift l to cycle tabs!
+nnoremap H gT
+nnoremap L gt
+
+let NERDTreeShowHidden=1
