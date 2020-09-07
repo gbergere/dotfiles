@@ -1,8 +1,6 @@
 set encoding=utf-8
-scriptencoding utf-8
 
-"""
-"	Vundle Plugin Manager
+" Vundle Plugin Manager
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -11,7 +9,6 @@ scriptencoding utf-8
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-""
 
 filetype off                  " required
 
@@ -39,3 +36,16 @@ source ~/.vim/basics.vim
 source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
+
+nmap <leader>f :Files<CR>
+nmap <leader>h :History<CR>
+nmap <leader>l :BLines<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>rg :Rg
+nmap <leader>t :Tags
+nmap <leader>d :BTags <CR>
+
+" Edit & source vimrc shortcuts
+nmap <leader>ev :tabe ~/.vimrc<cr>
+nmap <leader>sv :source ~/.vimrc<cr>
+map <Space> <Leader>
