@@ -16,6 +16,8 @@ init-home:
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.zshrc ~
 	ln -svhf $(PWD)/.fzf.zsh ~
+	# Ctags
+	ln -svhf $(PWD)/.ctags ~
 	# Install all brew packages
 	brew bundle
 
