@@ -103,15 +103,15 @@ fi
 # TMUX
 # -----------------------------------------------------------------------------
 
-if tmux ls | grep --silent "main"
-then
-	if tmux ls | grep -e "^main: .*" | grep --silent -v -e ".* (attached)$"
-	then
-		tmux attach-session -t main
-	fi
-else
-	tmux new-session -s main
-fi
+# if tmux ls | grep --silent "main"
+# then
+# 	if tmux ls | grep -e "^main: .*" | grep --silent -v -e ".* (attached)$"
+# 	then
+# 		tmux attach-session -t main
+# 	fi
+# else
+# 	tmux new-session -s main
+# fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then

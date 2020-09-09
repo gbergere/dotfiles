@@ -20,6 +20,8 @@ init-home:
 	ln -svhf $(PWD)/.ctags ~
 	# Install all brew packages
 	brew bundle
+	# Set iTerm settings folder
+	source .iterm.sh
 
 install-brew:
 	[ ! -f /usr/local/bin/brew ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

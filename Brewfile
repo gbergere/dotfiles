@@ -9,7 +9,7 @@ cask "1password-cli"
 brew "fzf"
 brew "iperf"
 brew "jq"
-brew "tmux"
+# brew "tmux"
 brew "watch"
 
 # DevOps
