@@ -299,7 +299,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>999 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>58 13 2502 1404 0 0 2560 1417 </string>
+	<string>0 0 2560 1440 0 0 2560 1440 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -964,7 +964,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Working Directory</key>
 			<string>/Users/simondevilliers</string>
 		</dict>
@@ -3062,7 +3062,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D518D0AF-E942-429E-A8D7-7874CD8CF1DD</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>351</integer>
+	<integer>352</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
