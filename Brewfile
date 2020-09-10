@@ -13,6 +13,10 @@ brew "jq"
 brew "watch"
 brew "TomAnthony/brews/itermocil"
 
+# YouCompleteMe
+brew "cmake"
+brew "macvim"
+
 # DevOps
 brew "circleci"
 brew "jsonnet"

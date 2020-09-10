@@ -303,3 +303,5 @@ if [ -f '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias vim='/usr/local/Cellar/macvim/8.2-165_1/bin/vim'

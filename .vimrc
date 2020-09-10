@@ -29,9 +29,12 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kshenoy/vim-signature'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+colorscheme dracula
 
 source ~/.vim/basics.vim
 source ~/.vim/aliases.vim

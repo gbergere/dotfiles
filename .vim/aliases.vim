@@ -48,34 +48,6 @@ endif
 let g:airline_symbols.branch = '⎇'
 
 """
-" CtrlP config
-""
-Plugin 'ctrlpvim/ctrlp.vim'
-
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-  \ },
-  \ 'fallback': 'find %s -type f -maxdepth 3'
-  \ }
-
-"""
 " Vim GitGutter Plugin
 ""
 Plugin 'airblade/vim-gitgutter'
-
-"""
-" Vimux Plugin
-""
-Plugin 'benmills/vimux'
-let g:VimuxPromptString = '>>'
-
-" Run a given command
-map <leader>ve :VimuxPromptCommand<cr>
-" Repeat last command
-map <leader>vr :VimuxRunLastCommand<cr>
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
-" Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
