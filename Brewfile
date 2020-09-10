@@ -11,6 +11,7 @@ brew "iperf"
 brew "jq"
 # brew "tmux"
 brew "watch"
+brew "TomAnthony/brews/itermocil"
 
 # DevOps
 brew "circleci"
