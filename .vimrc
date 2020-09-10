@@ -28,6 +28,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kshenoy/vim-signature'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
