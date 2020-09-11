@@ -2,13 +2,13 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "811e18749d91a86ffda64f6b254f8b8e6b5754f9"
+        "revision": "18a9b3fb62be07865a7d60e7bdcb0404bfb9e8b0"
       },
       "homebrew/cask": {
-        "revision": "0bd09668e4b6ed26f105bda7a1c876e528072d11"
+        "revision": "43071a70701dcaf85f0669a01eaf9037f63de49d"
       },
       "homebrew/core": {
-        "revision": "b599f82489f1177cfb69f21f9878eeb3cb562cb5"
+        "revision": "1c068b406a478289df7dcf141c90f886b2ff28f0"
       },
       "heroku/brew": {
         "revision": "6799ed0b4abcd57b9de2ca1a60305d2868d7c66c"
@@ -297,7 +297,49 @@
           }
         }
       },
-      "tomanthony/brews/itermocil": null
+      "tomanthony/brews/itermocil": null,
+      "cmake": {
+        "version": "3.18.2",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.18.2.catalina.bottle.tar.gz",
+              "sha256": "76c373c703198dd3b079c43f42ff0b043de2676d2e34a43695a917be51a42d54"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.18.2.mojave.bottle.tar.gz",
+              "sha256": "f351e121f21a792d8f89d01893b623a3a82cd72af18756211aba04efd3fa4338"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.18.2.high_sierra.bottle.tar.gz",
+              "sha256": "8c0167f462ede8d3ab63357d01023f5432b3f155d5debc2cfe21970d83ffcf47"
+            }
+          }
+        }
+      },
+      "macvim": {
+        "version": "8.2-165_1",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/macvim-8.2-165_1.catalina.bottle.tar.gz",
+              "sha256": "4d713a53cbff8ff7ac148d46554e35a23cd524fdcc8fc90004c7ff1c6973ef1e"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/macvim-8.2-165_1.mojave.bottle.tar.gz",
+              "sha256": "48122702342ce1a199c69d00c9b01059e3613fd6f788dce7a9028309c7e8de54"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/macvim-8.2-165_1.high_sierra.bottle.tar.gz",
+              "sha256": "9ff46b5ec556f7d99aafab95239a34041cd2a36e6a97a96cb193a3bb3b1559f0"
+            }
+          }
+        }
+      }
     },
     "cask": {
       "1password-cli": {
@@ -321,10 +363,10 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b599f82489f1177cfb69f21f9878eeb3cb562cb5",
-        "CLT": "11.5.0.0.1.1588476445",
+        "Homebrew/homebrew-core": "1c068b406a478289df7dcf141c90f886b2ff28f0",
+        "CLT": "11.0.33.16",
         "Xcode": "11.5",
-        "macOS": "10.15.5"
+        "macOS": "10.15.6"
       }
     }
   }

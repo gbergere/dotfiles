@@ -22,7 +22,14 @@ init-home:
 	brew bundle
 
 install-brew:
-	[ ! -f /usr/local/bin/brew ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	-[ ! -f /usr/local/bin/brew ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 install-vim-dep:
-	[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	-[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	vim -c 'PluginInstall' -c 'qa!'
+
+install-pyenv:
+	pyenv install -s 3.8.3
+	-[ ! -d $(pyenv root)/plugins ] && git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
+	-pyenv virtualenvwrapper
+	-mkvirtualenv -p python3.8 kraken-core
