@@ -19,7 +19,6 @@ call vundle#begin()
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
 Plugin 'rbong/vim-flog'
 Plugin 'tpope/vim-eunuch'
 Plugin 'godlygeek/tabular'
@@ -31,6 +30,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'kshenoy/vim-signature'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'govim/govim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
