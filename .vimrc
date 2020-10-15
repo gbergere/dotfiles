@@ -1,3 +1,6 @@
+" Disable markdown from Polyglot as we're install a separate extension
+let g:polyglot_disabled = ['markdown', 'go']
+
 set encoding=utf-8
 
 " Vundle Plugin Manager
@@ -64,3 +67,7 @@ nnoremap H gT
 nnoremap L gt
 
 let NERDTreeShowHidden=1
+
+" Puppet - align hashes (while editing)
+let g:puppet_align_hashes = 1
+
