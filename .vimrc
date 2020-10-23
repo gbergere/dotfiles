@@ -22,6 +22,7 @@ call vundle#begin()
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'rbong/vim-flog'
 Plugin 'tpope/vim-eunuch'
 Plugin 'godlygeek/tabular'
@@ -34,6 +35,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'govim/govim'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -65,6 +67,9 @@ map <C-l> <C-W>l
 " shift h and shift l to cycle tabs!
 nnoremap H gT
 nnoremap L gt
+
+# Easy GitHub URLs from Vim (DW tip)
+vnoremap <leader>gb :GBrowse! master:%<cr>
 
 let NERDTreeShowHidden=1
 
