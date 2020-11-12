@@ -258,12 +258,6 @@ alias de='docker exec -it'
 alias dl='docker logs'
 alias dp='docker ps'
 alias drm='docker rm $(docker ps -a -q)'
-alias g='gcloud'
-alias gc='gcloud compute'
-alias gca='gcloud config configurations activate'
-alias gcci='gcloud config configurations list'
-alias gci='gcloud compute instances list'
-alias gcssh='gcloud compute ssh'
 alias gl='git log --pretty=oneline --abbrev-commit'
 alias htop='sudo htop'
 alias jga='jx get activity -f'
@@ -304,4 +298,4 @@ if [ -f '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc'; fi
 
-alias vim='/usr/local/Cellar/macvim/8.2-165_1/bin/vim'
+alias gdlb='git branch -r | awk "{print $1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print $1}" | xargs git branch -d'

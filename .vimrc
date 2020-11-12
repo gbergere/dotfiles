@@ -68,7 +68,7 @@ map <C-l> <C-W>l
 nnoremap H gT
 nnoremap L gt
 
-# Easy GitHub URLs from Vim (DW tip)
+" Easy GitHub URLs from Vim (DW tip)
 vnoremap <leader>gb :GBrowse! master:%<cr>
 
 let NERDTreeShowHidden=1
