@@ -1,5 +1,5 @@
 " Disable markdown from Polyglot as we're install a separate extension
-let g:polyglot_disabled = ['markdown', 'go']
+let g:polyglot_disabled = ['markdown']
 
 set encoding=utf-8
 
@@ -33,9 +33,9 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kshenoy/vim-signature'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'govim/govim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -76,3 +76,13 @@ let NERDTreeShowHidden=1
 " Puppet - align hashes (while editing)
 let g:puppet_align_hashes = 1
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()

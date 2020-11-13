@@ -299,3 +299,4 @@ if [ -f '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias gdlb='git branch -r | awk "{print $1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print $1}" | xargs git branch -d'
+alias vim='nvim .'

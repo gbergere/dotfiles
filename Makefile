@@ -12,6 +12,8 @@ init-home:
 	# Vim
 	ln -svhf $(PWD)/.vimrc  ~
 	ln -svhf $(PWD)/.vim  ~
+	# nVim
+	ln -svhf $(PWD)/.config/nvim/  ~/.config
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.zshrc ~
