@@ -86,3 +86,6 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" NOTE for nvim, using coc.nvim, need to install language servers for it: coc-rust-analyzer, 
+" and for terraform https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
