@@ -54,7 +54,7 @@ nmap <leader>h :History<CR>
 nmap <leader>l :BLines<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>rg :Rg<CR>
-nmap <leader>t :Tags
+nmap <leader>t :Tags<CR>
 nmap <leader>d :BTags <CR>
 
 " Edit & source vimrc shortcuts
