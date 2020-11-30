@@ -36,6 +36,7 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'rust-lang/rust.vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'Raimondi/delimitMate'
+Plugin 'wellle/targets.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -55,7 +56,8 @@ nmap <leader>l :BLines<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>t :Tags<CR>
-nmap <leader>d :BTags <CR>
+nmap <leader>d :BTags<CR>
+
 
 " Edit & source vimrc shortcuts
 nmap <leader>ev :tabe ~/.vimrc<cr>
@@ -105,3 +107,4 @@ inoremap <silent><expr> <Tab>
 " and for terraform https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
 
 autocmd QuickFixCmdPost [^l]* cwindow
+
