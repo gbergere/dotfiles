@@ -8,11 +8,13 @@
 --regex-ansible=/^[ \t ]*-[ \t ]*hosts:[ \t ]*(.+)/\1/h,hosts/
 --langdef=terraform
 --langmap=terraform:.tf.tfvars
---regex-terraform=/^resource "(.+)" "(.+)"/\1 \2/r,resources/
---regex-terraform=/^variable "(.+)"/\1/v,variables/
---regex-terraform=/^module "(.+)"/\1/m,modules/
---regex-terraform=/^output "(.+)"/\1/o,outputs/
---regex-terraform=/^([a-z0-9_]+) =/\1/f,tfvars/
+--regex-terraform=/^[[:space:]]*resource[[:space:]]*"([^"]*)"[[:space:]]*"([^"]*)"/\2/r,Resource/
+--regex-terraform=/^[[:space:]]*data[[:space:]]*"([^"]*)"[[:space:]]*"([^"]*)"/\2/d,Data/
+--regex-terraform=/^[[:space:]]*variable[[:space:]]*"([^"]*)"/\1/v,Variable/
+--regex-terraform=/^[[:space:]]*provider[[:space:]]*"([^"]*)"/\1/p,Provider/
+--regex-terraform=/^[[:space:]]*module[[:space:]]*"([^"]*)"/\1/m,Module/
+--regex-terraform=/^[[:space:]]*output[[:space:]]*"([^"]*)"/\1/o,Output/
+--regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
 --languages=ansible,python,sh,terraform,make
 --langdef=markdown
 --langmap=markdown:.md
