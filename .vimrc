@@ -46,6 +46,9 @@ source ~/.vim/aliases.vim
 source ~/.vim/linters.vim
 source ~/.vim/functions.vim
 
+set number                     " Show current line number
+set relativenumber             " Show relative line numbers
+
 nmap <leader>f :Files<CR>
 nmap <leader>h :History<CR>
 nmap <leader>l :BLines<CR>
@@ -57,16 +60,27 @@ nmap <leader>d :BTags <CR>
 " Edit & source vimrc shortcuts
 nmap <leader>ev :tabe ~/.vimrc<cr>
 nmap <leader>sv :source ~/.vimrc<cr>
-map <Space> <Leader>
+" map <Space> <Leader>
+
+" Edit & source nvim
+nmap <leader>en :tabe ~/.config/nvim/init.vim<cr>
+nmap <leader>sn :source ~/.config/nvim/init.vim<cr>
 
 " Drop the w for moving between windows and tabs
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
 " shift h and shift l to cycle tabs!
 nnoremap H gT
 nnoremap L gt
+
+" Quick-save
+nmap <leader>w :w<CR>
+
+" Quick-quit
+nmap <leader>q :qall<CR>
 
 " Easy GitHub URLs from Vim (DW tip)
 vnoremap <leader>gb :GBrowse! master:%<cr>
@@ -87,5 +101,7 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-" NOTE for nvim, using coc.nvim, need to install language servers for it: coc-rust-analyzer, 
+" NOTE for nvim, using coc.nvim, need to install language servers for it: coc-rust-analyzer,
 " and for terraform https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
+
+autocmd QuickFixCmdPost [^l]* cwindow

@@ -5,10 +5,10 @@
         "revision": "a8aa5445de31d655508a52223ed20e6c09e121a2"
       },
       "homebrew/cask": {
-        "revision": "2e4e98cfad5b9bd31ce2a89a27f21f977e068820"
+        "revision": "cb3c389dbd7d0abed8efc0d4d20468ad4ce74348"
       },
       "homebrew/core": {
-        "revision": "fc794cad6ba6d52504ab13d980d083df8c4c9dac"
+        "revision": "ea59d656938d5b86f74ece0944cff0e4817a9a94"
       },
       "heroku/brew": {
         "revision": "b0f530c74bbc1b227a6b6d4ad6cb01775a9baa82"
@@ -21,6 +21,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/fzf-0.24.3.big_sur.bottle.tar.gz",
+              "sha256": "83135bde9feb6c530c56c450ed36de2972c88f0979cb46cdeb49e2ab725735bc"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/fzf-0.24.3.catalina.bottle.tar.gz",
               "sha256": "76bc4f0d19d68580704b4cf66a57650bcb9a18494b1c61f78770919be3a2b510"
@@ -67,6 +71,10 @@
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/jq-1.6.big_sur.bottle.1.tar.gz",
+              "sha256": "bf0f8577632af7b878b6425476f5b1ab9c3bf66d65affb0c455048a173a0b6bf"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/jq-1.6.catalina.bottle.1.tar.gz",
               "sha256": "820a3c85fcbb63088b160c7edf125d7e55fc2c5c1d51569304499c9cc4b89ce8"
@@ -113,6 +121,10 @@
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/watch-3.3.16.big_sur.bottle.tar.gz",
+              "sha256": "3933eb4166737df39b49d7abf3279385e09867c516f2952095cfbe3b74d93175"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/watch-3.3.16.catalina.bottle.tar.gz",
               "sha256": "011e48363fe62c7a4ba0dec746d5964ee25545bde7855a31db0cb411420df190"
@@ -172,22 +184,26 @@
         }
       },
       "circleci": {
-        "version": "0.1.11393",
+        "version": "0.1.11458",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11458.big_sur.bottle.tar.gz",
+              "sha256": "f710ce0ed5fdd1715ba06e74ca9922ba84af51465fba604086134651509c6370"
+            },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11393.catalina.bottle.tar.gz",
-              "sha256": "eb9f412e5a323521ac3510aa17b9418844275c49702aca4923dc99f9b09ad2cc"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11458.catalina.bottle.tar.gz",
+              "sha256": "9ab1c0cc22228df15245a7b01382c47487da48f5f6c50ce791c5703ef720a878"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11393.mojave.bottle.tar.gz",
-              "sha256": "09856474126b975fcbb109ef45c484463a4d72a717224cb71d384b9904034c9d"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11458.mojave.bottle.tar.gz",
+              "sha256": "5219c40b5b4478990b02aac4d7ef031008158de59645a14aa7bc6eea9757813d"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11393.high_sierra.bottle.tar.gz",
-              "sha256": "abe401b65de271373aa71b1c7288d9257d7c6536b1807f011e1b8359f719f6c7"
+              "url": "https://homebrew.bintray.com/bottles/circleci-0.1.11458.high_sierra.bottle.tar.gz",
+              "sha256": "b3862f5687e81a54838ae8dad28ed6ac1275bf93be516f35f3e7b57b67363b6b"
             }
           }
         }
@@ -219,6 +235,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/terraform-0.13.5.big_sur.bottle.tar.gz",
+              "sha256": "49ddb9e200a827b8bc2f09707ce251f08f2a94f4f30feb72f47ed5150381b31e"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/terraform-0.13.5.catalina.bottle.tar.gz",
               "sha256": "7fdf6a1f6589963a78e95483ebe998df388141c3a9b18e3d05d1ae40a2fa0ad9"
@@ -261,6 +281,10 @@
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/yamllint-1.25.0_1.big_sur.bottle.tar.gz",
+              "sha256": "d17a340b3d8c1a2b5c85449cc7930ae4263c94eb9a924971066c53af45d46ee3"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/yamllint-1.25.0_1.catalina.bottle.tar.gz",
               "sha256": "4da53cd2d8d61957b50189cdaf4378319bc233ae4d9714c95cb189a06058ff2e"
@@ -282,6 +306,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/tflint-0.20.3.big_sur.bottle.tar.gz",
+              "sha256": "bb738cfa83d9ddb92d1dd812511e2b735fc81ac2fbe5f07cc752b41676c5dd18"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/tflint-0.20.3.catalina.bottle.tar.gz",
               "sha256": "d7930b07af3479a15c068518f97f9064a1baa9cec4c1a604ab519b1a28eb8fab"
@@ -363,10 +391,10 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "fc794cad6ba6d52504ab13d980d083df8c4c9dac",
-        "CLT": "11.5.0.0.1.1588476445",
+        "Homebrew/homebrew-core": "ea59d656938d5b86f74ece0944cff0e4817a9a94",
+        "CLT": "11.0.33.16",
         "Xcode": "11.5",
-        "macOS": "10.15.5"
+        "macOS": "10.15.7"
       }
     }
   }
