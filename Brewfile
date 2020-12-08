@@ -9,7 +9,7 @@ cask "1password-cli"
 brew "fzf"
 brew "iperf"
 brew "jq"
-# brew "tmux"
+brew "hashicorp/tap/terraform-ls"
 brew "watch"
 brew "TomAnthony/brews/itermocil"
 
@@ -22,3 +22,4 @@ brew "terraform"
 brew "shellcheck"
 brew "yamllint"
 brew "tflint"
+
