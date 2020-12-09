@@ -118,5 +118,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
-autoload -U compinit && compinit
