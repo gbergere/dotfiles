@@ -17,11 +17,11 @@ local hyper = {"ctrl", "cmd"}
 -- hyper 1 to launch of focus on Mail
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "1", "Jump to Basecamp (or Mail)", function()
-  if hs.application.frontmostApplication():name() == "Basecamp 3" then
-    hs.application.launchOrFocus("Mail")
+hs.hotkey.bind(hyper, "1", "Jump to Mail (or Trello)", function()
+  if hs.application.frontmostApplication():name() == "Mail" then
+    hs.application.launchOrFocus("Trello")
   else
-    hs.application.launchOrFocus("Basecamp 3")
+    hs.application.launchOrFocus("Mail")
   end
 end)
 
@@ -29,8 +29,12 @@ end)
 -- hyper 2 to launch of focus on Slack
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "2", "Jump to Slack", function()
-  hs.application.launchOrFocus("Slack")
+hs.hotkey.bind(hyper, "2", "Jump to Slack (or Microsoft Teams)", function()
+  if hs.application.frontmostApplication():name() == "Slack" then
+    hs.application.launchOrFocus("Microsoft Teams")
+  else
+    hs.application.launchOrFocus("Slack")
+  end
 end)
 
 -----------------------------------------------
