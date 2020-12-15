@@ -93,3 +93,11 @@ end)
 hs.hotkey.bind(hyper, "0", "Jump to Safari", function()
   hs.application.launchOrFocus("Safari")
 end)
+
+-----------------------------------------------
+-- hyper b to launch of focus on Boop
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, "b", "Boop", function()
+  hs.application.launchOrFocus("Boop")
+end)
