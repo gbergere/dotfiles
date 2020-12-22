@@ -3,7 +3,7 @@
 	st = status -s
   	br = branch
 [core]
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore
 [user]
 	name = Simon de Villiers
 	email = simon.devilliers@octoenergy.com

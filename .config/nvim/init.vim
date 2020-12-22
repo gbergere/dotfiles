@@ -24,3 +24,6 @@ nnoremap <leader><leader> <c-^>
 
 " ; as :
 nnoremap ; :
+
+" rust
+let g:rustfmt_autosave = 1
