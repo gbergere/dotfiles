@@ -30,7 +30,9 @@ install-brew:
 
 install-vim-dep:
 	-[ ! -d ~/.vim/bundle ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	vim -c 'PluginInstall' -c 'qa!'
+	nvim -c 'PluginInstall' -c 'qa!'
+	nvim -c 'CocInstall coc-rust-analyzer coc-json coc-python coc-docker coc-yank'
+	# TODO: find out how to exit this after; setting qa! after the CocInstall doesn't work
 
 install-pyenv:
 	pyenv install -s 3.8.3

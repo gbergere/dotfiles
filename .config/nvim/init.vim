@@ -41,3 +41,9 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+
+" Replace after searching
+nnoremap <C-S> :%s///g<LEFT><LEFT>
+
+" Yank list (from coc-yank)
+nnoremap <leader>y  :<C-u>CocList -A --normal yank<cr>
