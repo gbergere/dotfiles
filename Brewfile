@@ -12,6 +12,8 @@ brew "jq"
 brew "hashicorp/tap/terraform-ls"
 brew "watch"
 brew "TomAnthony/brews/itermocil"
+brew "ranger"
+brew "trash"
 
 # DevOps
 brew "circleci"
@@ -22,4 +24,3 @@ brew "terraform"
 brew "shellcheck"
 brew "yamllint"
 brew "tflint"
-

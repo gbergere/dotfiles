@@ -27,3 +27,17 @@ nnoremap ; :
 
 " rust
 let g:rustfmt_autosave = 1
+
+set mouse=a " Enable mouse usage (all modes) in terminals
+
+" ranger
+let g:ranger_map_keys = 0
+map <leader>d :Ranger<CR>
+" let g:ranger_replace_netrw = 1 " open ranger when vim opens a directory
+
+" Make netrw look like nerdtree
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25

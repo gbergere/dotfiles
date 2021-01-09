@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/simondevilliers/code/dotfiles'
+let g:netrw_dirhist_7='/Users/simondevilliers/code/dotfiles/.git'
+let g:netrw_dirhist_6='/Users/simondevilliers/code/dotfiles/.vim'
+let g:netrw_dirhist_5='/Users/simondevilliers/code/dotfiles/iterm'
+let g:netrw_dirhist_4='/Users/simondevilliers/code/dotfiles'
+let g:netrw_dirhist_3='/Users/simondevilliers/code/dotfiles/.config/nvim'
+let g:netrw_dirhist_2='/Users/simondevilliers/code/dotfiles/.config'
+let g:netrw_dirhist_1='/Users/simondevilliers/code/dotfiles'

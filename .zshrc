@@ -300,3 +300,5 @@ if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '
 
 alias gdlb='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias vim='nvim .'
+
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,iterm/*}"'

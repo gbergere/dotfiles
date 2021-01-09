@@ -14,6 +14,8 @@ init-home:
 	ln -svhf $(PWD)/.vim  ~
 	# nVim
 	ln -svhf $(PWD)/.config/nvim/  ~/.config
+	# ranger
+	ln -svhf $(PWD)/.config/ranger/  ~/.config
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.zshrc ~

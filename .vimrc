@@ -37,6 +37,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'Raimondi/delimitMate'
 Plugin 'wellle/targets.vim'
+Plugin 'francoiscabrol/ranger.vim'
+Plugin 'rbgrouleff/bclose.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

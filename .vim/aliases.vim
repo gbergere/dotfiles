@@ -31,11 +31,11 @@ set noswapfile
 """
 " NERDTree Plugin
 ""
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 
-let g:NERDTreeWinSize=40
-let g:NERDTreeNodeDelimiter = "\u00a0"
-map <C-n> :NERDTreeToggle<CR>
+" let g:NERDTreeWinSize=40
+" let g:NERDTreeNodeDelimiter = "\u00a0"
+" map <C-n> :NERDTreeToggle<CR>
 
 """
 " Airline Plugin
