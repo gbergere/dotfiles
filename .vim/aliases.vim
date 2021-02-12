@@ -71,6 +71,16 @@ let g:ctrlp_user_command = {
   \ }
 
 """
+" Fzf Plugin
+""
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+" :nnoremap <C-L> :GFiles<CR>
+
+"""
 " Vim GitGutter Plugin
 ""
 Plugin 'airblade/vim-gitgutter'

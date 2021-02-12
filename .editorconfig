@@ -21,3 +21,6 @@ indent_size = 2
 [*.{yml,yaml}]
 indent_style = space
 indent_size = 2
+
+[*.css]
+indent_size = 2
