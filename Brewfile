@@ -8,11 +8,12 @@ brew "fzf"
 cask "hammerspoon"
 brew "iperf"
 brew "jq"
+brew "rg"
 brew "tmux"
 brew "watch"
 brew "basecamp"
 
-# GPG
+# Security
 brew "gnupg"
 brew "gpg"
 brew "pinentry-mac"
