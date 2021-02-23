@@ -47,3 +47,8 @@ Plugin 'prettier/vim-prettier'
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre,InsertLeave *.js,*.jsx,*.ts,*.tsx Prettier
+
+"""
+" Conquer of Completion Plugin
+""
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
