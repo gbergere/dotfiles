@@ -35,3 +35,4 @@ brew "luarocks"
 brew "shellcheck"
 brew "yamllint"
 brew "tflint"
+brew "node"  # Required for coc.nvim
