@@ -181,3 +181,6 @@ nnoremap <silent> g* g*zz
 
 " vim-rooter
 let g:rooter_patterns = ['.git']
+
+" Don't reset cursor position when yanking
+:vmap y ygv<Esc>

@@ -280,6 +280,13 @@ alias watch='watch '
 
 function copy(){ cat $1 | pbcopy }
 
+autofixup() {
+  git add -A
+  cm=$(git log -1 --pretty=%B | cat)
+  resetbranch
+  git commit -m "$cm"
+}
+
 # For things that can't be commited
 sh ~/.envvars.sh
 
