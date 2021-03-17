@@ -7,7 +7,7 @@ export ZSH="/Users/simondevilliers/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="dracula"
 
 # Set list of themes to load
@@ -277,7 +277,9 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias psg='ps -ef | grep'
 alias watch='watch '
-alias ls='exa --git'
+alias gdlb='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias vim='nvim .'
+alias ls='exa --long --git'
 alias tree='exa -T'
 
 function copy(){ cat $1 | pbcopy }
@@ -301,13 +303,7 @@ if type brew &>/dev/null; then
 fi
 
 eval "$(rbenv init -)"
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simondevilliers/google-cloud-sdk/completion.zsh.inc'; fi
-
-alias gdlb='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
-alias vim='nvim .'
 
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,iterm/*}"'
+
+eval "$(starship init zsh)"

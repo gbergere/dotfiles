@@ -2,8 +2,10 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "heroku/brew"
+tap "homebrew/cask-fonts"
 
 cask "1password-cli"
+cask "font-fira-code"
 
 # Tools
 brew "fzf"
@@ -16,6 +18,7 @@ brew "ranger"
 brew "trash"
 brew "git-delta"
 brew "exa"
+brew "starship"
 
 # DevOps
 brew "circleci"
