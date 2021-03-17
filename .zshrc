@@ -7,7 +7,7 @@ export ZSH="/Users/simondevilliers/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="dracula"
 
 # Set list of themes to load
@@ -277,6 +277,8 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias psg='ps -ef | grep'
 alias watch='watch '
+alias ls='exa --git'
+alias tree='exa -T'
 
 function copy(){ cat $1 | pbcopy }
 

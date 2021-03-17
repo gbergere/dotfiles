@@ -15,6 +15,7 @@ brew "TomAnthony/brews/itermocil"
 brew "ranger"
 brew "trash"
 brew "git-delta"
+brew "exa"
 
 # DevOps
 brew "circleci"
