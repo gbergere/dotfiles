@@ -180,7 +180,7 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 " vim-rooter
-let g:rooter_patterns = ['.git']
+let g:rooter_patterns = ['.git', '!.terraform']
 
 " Don't reset cursor position when yanking
 :vmap y ygv<Esc>

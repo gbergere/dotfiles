@@ -4,6 +4,7 @@
   	br = branch
 [core]
 	excludesFile = ~/.gitignore
+    pager = delta
 [user]
 	name = Simon de Villiers
 	email = simon.devilliers@octoenergy.com
@@ -11,3 +12,9 @@
 	rebase = true
 [rebase]
 	autosquash = true
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Dracula
+[interactive]
+    diffFilter = delta --color-only

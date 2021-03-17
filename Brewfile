@@ -14,11 +14,11 @@ brew "watch"
 brew "TomAnthony/brews/itermocil"
 brew "ranger"
 brew "trash"
+brew "git-delta"
 
 # DevOps
 brew "circleci"
 brew "jsonnet"
-brew "terraform"
 
 # Vim linters
 brew "shellcheck"
