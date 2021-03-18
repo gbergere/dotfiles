@@ -16,6 +16,8 @@ init-home:
 	ln -svhf $(PWD)/.config/nvim/  ~/.config
 	# ranger
 	ln -svhf $(PWD)/.config/ranger/  ~/.config
+	# starship.rs
+	ln -svhf $(PWD)/.config/starship.toml  ~/.config
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.zshrc ~

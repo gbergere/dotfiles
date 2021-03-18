@@ -1,0 +1,21 @@
+[character]
+success_symbol = "[➜](bold green)"
+
+[package]
+disabled = true
+
+[python]
+format = '[(\($virtualenv\) )]($style)'
+
+[aws]
+format = '[(\[$symbol$profile\] )]($style)'
+style = "bold blue"
+[aws.region_aliases]
+ap-southeast-2 = "au"
+ap-southeast-1 = "jp"
+us-east-1 = "va"
+eu-west-1 = "e1"
+eu-west-2 = "e2"
+
+[terraform]
+disabled = true

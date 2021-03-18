@@ -5,10 +5,10 @@
         "revision": "3fbca9f51db8e7255f4b2f48daba1e04a2d99ad6"
       },
       "homebrew/cask": {
-        "revision": "610a68b3b3569126354b66223f1bb22bb7e54e95"
+        "revision": "554ea10ee4c3ccdea93b33f76dde483d577f96f4"
       },
       "homebrew/core": {
-        "revision": "3ad9891001294e7583e61fa6cfb7db68435abdca"
+        "revision": "f84008e4077a82a950603d220e059b741cf8f92e"
       },
       "heroku/brew": {
         "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
@@ -28,6 +28,12 @@
         "version": "2.1.0",
         "options": {
           "full_name": "font-hack-nerd-font"
+        }
+      },
+      "font-fira-code": {
+        "version": "5.2",
+        "options": {
+          "full_name": "font-fira-code"
         }
       }
     },
@@ -435,7 +441,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.0.7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3ad9891001294e7583e61fa6cfb7db68435abdca",
+        "Homebrew/homebrew-core": "f84008e4077a82a950603d220e059b741cf8f92e",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "11.2.3"
