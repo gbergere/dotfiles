@@ -19,6 +19,7 @@ brew "trash"
 brew "git-delta"
 brew "exa"
 brew "starship"
+brew "git-absorb"
 
 # DevOps
 brew "circleci"
