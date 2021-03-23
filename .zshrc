@@ -281,6 +281,7 @@ alias gdlb='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch
 alias vim='nvim .'
 alias ls='exa --long --git'
 alias tree='exa -T'
+alias glp='git log -p'
 
 function copy(){ cat $1 | pbcopy }
 
