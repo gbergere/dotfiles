@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/simondevilliers/code/dotfiles'
+let g:netrw_dirhist_4='/Users/simondevilliers/code/octoenergy/octocloud'
 let g:netrw_dirhist_3='/Users/simondevilliers/code/dotfiles'
 let g:netrw_dirhist_2='/Users/simondevilliers/code/octoenergy/octocloud'
 let g:netrw_dirhist_1='/Users/simondevilliers/code/dotfiles'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_9='/Users/simondevilliers/code/dotfiles'
 let g:netrw_dirhist_8='/Users/simondevilliers/code/octoenergy/octocloud'
 let g:netrw_dirhist_7='/Users/simondevilliers/code/octoenergy/kraken-core'
 let g:netrw_dirhist_6='/Users/simondevilliers/code/octoenergy/octocloud'
-let g:netrw_dirhist_5='/Users/simondevilliers/code/octoenergy'
-let g:netrw_dirhist_4='/Users/simondevilliers/code/dotfiles'

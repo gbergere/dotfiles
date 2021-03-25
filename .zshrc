@@ -308,3 +308,7 @@ eval "$(rbenv init -)"
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,iterm/*}"'
 
 eval "$(starship init zsh)"
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+
