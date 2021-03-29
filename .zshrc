@@ -282,6 +282,7 @@ alias vim='nvim .'
 alias ls='exa --long --git'
 alias tree='exa -T'
 alias glp='git log -p'
+alias kj='kill $(jobs -p)'
 
 function copy(){ cat $1 | pbcopy }
 
@@ -313,3 +314,4 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 ctags=/usr/local/bin/ctags
+
