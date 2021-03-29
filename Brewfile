@@ -20,6 +20,7 @@ brew "git-delta"
 brew "exa"
 brew "starship"
 brew "git-absorb"
+brew "ctags"
 
 # DevOps
 brew "circleci"

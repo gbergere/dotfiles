@@ -312,3 +312,4 @@ eval "$(starship init zsh)"
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+ctags=/usr/local/bin/ctags

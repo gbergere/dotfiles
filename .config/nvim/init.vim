@@ -184,3 +184,10 @@ let g:rooter_patterns = ['.git', '!.terraform']
 
 " Don't reset cursor position when yanking
 :vmap y ygv<Esc>
+
+" Auto-source vim files after save
+augroup VimReload
+    autocmd!
+    autocmd BufWritePost *.vim source %
+    autocmd BufWritePost vimrc source %
+augroup END
