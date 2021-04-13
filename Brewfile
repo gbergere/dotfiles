@@ -21,6 +21,7 @@ brew "exa"
 brew "starship"
 brew "git-absorb"
 brew "ctags"
+brew "k9s"
 
 # DevOps
 brew "circleci"
