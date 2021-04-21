@@ -50,6 +50,7 @@ Plugin 'wellle/targets.vim'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'airblade/vim-rooter'
+Plugin 'jesseleite/vim-agriculture' " fzf.vim's :Rg, but with flags
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -191,3 +192,7 @@ augroup VimReload
     autocmd BufWritePost *.vim source %
     autocmd BufWritePost vimrc source %
 augroup END
+
+" Search codebase for word under cursor (v useful)
+nnoremap gw <Plug>RgRawWordUnderCursor
+
