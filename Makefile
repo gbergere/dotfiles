@@ -24,6 +24,8 @@ init-home:
 	ln -svhf $(PWD)/.fzf.zsh ~
 	# Ctags
 	ln -svhf $(PWD)/.ctags ~
+	# Scripts dir
+	ln -svhf $(PWD)/scripts/* /usr/local/bin
 	# Install all brew packages
 	brew bundle
 

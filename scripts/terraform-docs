@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+function main() {
+    open "$(docs_url "$1")"
+}
+
+function docs_url() {
+    local provider="${1%%_*}"
+    local resource="${1#*_}"
+    echo "https://registry.terraform.io/providers/hashicorp/${provider}/latest/docs/resources/${resource}"
+}
+
+main "$1"
