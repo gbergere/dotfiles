@@ -285,6 +285,7 @@ alias glp='git log -p'
 alias kj='kill $(jobs -p)'
 alias prune='git remote prune origin'
 alias gfx='git add -A && git fixup'
+alias dotfiles='nvim ~/code/dotfiles'
 
 function copy(){ cat $1 | pbcopy }
 

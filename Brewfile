@@ -22,6 +22,7 @@ brew "starship"
 brew "git-absorb"
 brew "ctags"
 brew "k9s"
+brew "terminal-notifier"
 
 # DevOps
 brew "circleci"
