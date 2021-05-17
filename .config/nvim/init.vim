@@ -51,6 +51,7 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'jesseleite/vim-agriculture' " fzf.vim's :Rg, but with flags
+Plugin 'tpope/vim-rhubarb.git' " Used to facilitate fugitive's GBrowse with GH URLs
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -196,3 +197,5 @@ augroup END
 " Search codebase for word under cursor (v useful)
 nnoremap gw <Plug>RgRawWordUnderCursor
 
+" Copy URL for selected lines on master branch to clipboard.
+vnoremap <leader>gb :Gbrowse! master:%<cr>

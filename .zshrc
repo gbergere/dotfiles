@@ -283,6 +283,8 @@ alias ls='exa --long --git'
 alias tree='exa -T'
 alias glp='git log -p'
 alias kj='kill $(jobs -p)'
+alias prune='git remote prune origin'
+alias gfx='git add -A && git fixup'
 
 function copy(){ cat $1 | pbcopy }
 
@@ -315,3 +317,4 @@ export VISUAL='nvim'
 
 ctags=/usr/local/bin/ctags
 
+source <(inv --print-completion-script zsh)
