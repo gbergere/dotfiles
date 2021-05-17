@@ -286,6 +286,7 @@ alias kj='kill $(jobs -p)'
 alias prune='git remote prune origin'
 alias gfx='git add -A && git fixup'
 alias dotfiles='nvim ~/code/dotfiles'
+alias alert='terminal-notifier -title "Process finished" -message "$([ $? = 0 ] && echo Success || echo Error)"'
 
 function copy(){ cat $1 | pbcopy }
 
