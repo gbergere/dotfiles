@@ -52,6 +52,7 @@ Plugin 'rbgrouleff/bclose.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'jesseleite/vim-agriculture' " fzf.vim's :Rg, but with flags
 Plugin 'tpope/vim-rhubarb.git' " Used to facilitate fugitive's GBrowse with GH URLs
+Plugin 'rodjek/vim-puppet'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
