@@ -287,6 +287,9 @@ alias prune='git remote prune origin'
 alias gfx='git add -A && git fixup'
 alias dotfiles='nvim ~/code/dotfiles'
 alias alert='terminal-notifier -title "Process finished" -message "$([ $? = 0 ] && echo Success || echo Error)"'
+alias p='git pull'
+alias pr='gh pr view --web'
+alias rbi='git rebase -i origin/master'
 
 function copy(){ cat $1 | pbcopy }
 
@@ -320,3 +323,6 @@ export VISUAL='nvim'
 ctags=/usr/local/bin/ctags
 
 source <(inv --print-completion-script zsh)
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

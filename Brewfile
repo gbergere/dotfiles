@@ -23,6 +23,7 @@ brew "git-absorb"
 brew "ctags"
 brew "k9s"
 brew "terminal-notifier"
+brew "gh"
 
 # DevOps
 brew "circleci"
