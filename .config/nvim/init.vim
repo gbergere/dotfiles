@@ -200,3 +200,11 @@ nnoremap gw <Plug>RgRawWordUnderCursor
 
 " Copy URL for selected lines on master branch to clipboard.
 vnoremap <leader>gb :Gbrowse! master:%<cr>
+
+" Ctrl+h to stop searching
+vnoremap <C-h> :nohlsearch<cr>
+nnoremap <C-h> :nohlsearch<cr>
+
+" preview find/replace changes
+set inccommand=nosplit
+
