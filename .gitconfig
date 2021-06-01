@@ -3,6 +3,7 @@
 	st = status -s
   	br = branch
     fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+    remove-commit = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o -I {commit} git rebase --rebase-merges --onto {commit}^ {commit}"
 [core]
 	excludesFile = ~/.gitignore
     pager = delta
