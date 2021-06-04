@@ -208,3 +208,6 @@ nnoremap <C-h> :nohlsearch<cr>
 " preview find/replace changes
 set inccommand=nosplit
 
+" Open new file adjacent to current file
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
