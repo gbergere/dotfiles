@@ -53,6 +53,8 @@ Plugin 'airblade/vim-rooter'
 Plugin 'jesseleite/vim-agriculture' " fzf.vim's :Rg, but with flags
 Plugin 'tpope/vim-rhubarb.git' " Used to facilitate fugitive's GBrowse with GH URLs
 Plugin 'rodjek/vim-puppet'
+Plugin 'junkblocker/patchreview-vim'
+Plugin 'codegram/vim-codereview'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -201,13 +203,17 @@ nnoremap gw <Plug>RgRawWordUnderCursor
 " Copy URL for selected lines on master branch to clipboard.
 vnoremap <leader>gb :Gbrowse! master:%<cr>
 
-" Ctrl+h to stop searching
-vnoremap <C-h> :nohlsearch<cr>
-nnoremap <C-h> :nohlsearch<cr>
+" Ctrl+d to stop searching
+vnoremap <C-d> :nohlsearch<cr>
+nnoremap <C-d> :nohlsearch<cr>
 
 " preview find/replace changes
 set inccommand=nosplit
 
 " Open new file adjacent to current file
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Open new split panes to right and bottom, which feels more natural than Vim’s default
+set splitbelow
+set splitright
 
