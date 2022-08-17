@@ -7,6 +7,7 @@
 [user]
 	name = Geoffrey Bergeret
 	signingkey = 7BB70D34
+	email = geoffrey@gbergeret.com
 [pull]
 	rebase = true
 [commit]
@@ -15,3 +16,5 @@
 	program = gpg
 [rebase]
 	autosquash = true
+[init]
+	defaultBranch = main
