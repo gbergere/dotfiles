@@ -57,9 +57,10 @@ module.layout = {
     bottomRight60 = { .4, .5, .6, .5},
 
     -- Layout for wideScreen
-    oneThirdLeft      = {  0,  0,.33,  1},
-    oneThirdMiddle    = {.33,  0,.34,  1},
-    oneThirdRight     = {.67,  0,.33,  1},
+    left60            = {  0,  0, .6,  1},
+    right40           = { .6,  0, .4,  1},
+    center60          = { .2,  0, .6,  1},
+    wideRight         = {.67,  0,.33,  1},
     wideMiddle        = {.25,  0,.42,  1},
     wideMaximized     = { .2,  0, .6,  1},
     wideLeft          = {  0,  0,.25,  1},

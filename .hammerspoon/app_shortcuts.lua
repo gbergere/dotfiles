@@ -1,7 +1,7 @@
 -----------------------------------------------
 -- App Shortcuts with Cmd
 -----------------------------------------------
--- Alt + 1 -- Mail
+-- Alt + 1 -- HEY / Asana
 -- Alt + 2 -- Slack
 -- Alt + 3 -- Google Chrome
 -- Alt + 4 -- Terminal
@@ -17,12 +17,12 @@ local hyper = {"ctrl", "cmd"}
 -- hyper 1 to launch of focus on Mail
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, "1", "Jump to Mail (or Trello)", function()
-  if hs.application.frontmostApplication():name() == "Mail" then
-    hs.application.launchOrFocus("Trello")
-  else
-    hs.application.launchOrFocus("Mail")
-  end
+hs.hotkey.bind(hyper, "1", "Jump to HEY (or Asana)", function()
+  -- if hs.application.frontmostApplication():name() == "HEY" then
+    -- hs.application.launchOrFocus("Asana")
+  -- else
+    hs.application.launchOrFocus("HEY")
+  -- end
 end)
 
 -----------------------------------------------
@@ -30,11 +30,11 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "2", "Jump to Slack (or Microsoft Teams)", function()
-  if hs.application.frontmostApplication():name() == "Slack" then
-    hs.application.launchOrFocus("Microsoft Teams")
-  else
+  -- if hs.application.frontmostApplication():name() == "Slack" then
+    -- hs.application.launchOrFocus("Microsoft Teams")
+  -- else
     hs.application.launchOrFocus("Slack")
-  end
+  -- end
 end)
 
 -----------------------------------------------

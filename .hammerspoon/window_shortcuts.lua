@@ -23,7 +23,7 @@ hs.hotkey.showHotkeys(hyper, "s")
 hs.hotkey.bind(hyper, "f", function()
   local win = hs.window.focusedWindow()
   if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.wideMiddle)
+    window:applyLayout(win, window.layout.center60)
   else
     window:applyLayout(win, window.layout.maximized)
   end
@@ -36,11 +36,7 @@ end)
 
 hs.hotkey.bind(hyper, "d", function()
   local win = hs.window.focusedWindow()
-  if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.wideLeft)
-  else
-    window:applyLayout(win, window.layout.left40)
-  end
+  window:applyLayout(win, window.layout.left60)
 end)
 
 -----------------------------------------------
@@ -49,11 +45,7 @@ end)
 
 hs.hotkey.bind(hyper, "g", function()
   local win = hs.window.focusedWindow()
-  if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.oneThirdRight)
-  else
-    window:applyLayout(win, window.layout.right60)
-  end
+  window:applyLayout(win, window.layout.right40)
 end)
 
 -----------------------------------------------
@@ -115,7 +107,7 @@ end)
 hs.hotkey.bind(table.concat(hyper, "shift"), "f", function()
   local win = hs.window.focusedWindow()
   if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.oneThirdMiddle)
+    window:applyLayout(win, window.layout.wideMiddle)
   else
     window:applyLayout(win, window.layout.maximized)
   end
@@ -128,7 +120,7 @@ end)
 hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
   local win = hs.window.focusedWindow()
   if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.oneThirdLeft)
+    window:applyLayout(win, window.layout.wideLeft)
   else
     window:applyLayout(win, window.layout.left50)
   end
@@ -141,7 +133,7 @@ end)
 hs.hotkey.bind(table.concat(hyper, "shift"), "g", function()
   local win = hs.window.focusedWindow()
   if isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.oneThirdRight)
+    window:applyLayout(win, window.layout.wideRight)
   else
     window:applyLayout(win, window.layout.right50)
   end
