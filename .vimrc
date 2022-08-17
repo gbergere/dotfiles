@@ -13,10 +13,11 @@ scriptencoding utf-8
 " see :h vundle for more details or wiki for FAQ
 ""
 
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set runtimepath+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
