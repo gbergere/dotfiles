@@ -4,6 +4,7 @@ tap "homebrew/core"
 tap "heroku/brew"
 
 # Tools
+cash "1password/tap/1password-cli"
 brew "fzf"
 cask "hammerspoon"
 brew "iperf"

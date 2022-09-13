@@ -68,6 +68,8 @@ alias -g S="sudo "
 alias -g GS="grep_search "
 alias -g PR="2>&1 | tee /dev/tty | grep -oE 'https://.*' | xargs open -a Google\ Chrome"
 
+alias -g OP="AWS_ACCESS_KEY_ID=\"op://\$AWS_OP_PROFILE/AWS_ACCESS_KEY_ID\" AWS_SECRET_ACCESS_KEY=\"op://\$AWS_OP_PROFILE/AWS_SECRET_ACCESS_KEY\" op run --"
+
 # Suffix aliases
 alias -s md="vim"
 alias -s conf="vim"
@@ -81,7 +83,6 @@ alias -s rar="unrar l"
 alias -s tar="tar tf"
 alias -s tar.gz="echo "
 alias -s ace="unace l"
-
 
 ## ----------------------------------------------------------------------------
 # Source Dependencies
