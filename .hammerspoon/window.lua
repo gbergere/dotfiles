@@ -57,17 +57,29 @@ module.layout = {
     bottomRight60 = { .4, .5, .6, .5},
 
     -- Layout for wideScreen
-    left60            = {  0,  0, .6,  1},
-    right40           = { .6,  0, .4,  1},
-    center60          = { .2,  0, .6,  1},
-    wideRight         = {.67,  0,.33,  1},
-    wideMiddle        = {.25,  0,.42,  1},
-    wideMaximized     = { .2,  0, .6,  1},
-    wideLeft          = {  0,  0,.25,  1},
-    wideTopLeft       = {  0,  0,.25, .5},
-    wideTopRight      = {.67,  0,.33, .5},
-    wideBottomLeft    = {  0, .5,.25, .5},
-    wideBottomRight   = {.67, .5,.33, .5}
+    left60        = {  0,  0, .6,  1},
+    right40       = { .6,  0, .4,  1},
+    center60      = { .2,  0, .6,  1},
+    topRight40    = { .6,  0, .4, .5},
+    bottomRight40 = { .6, .5, .4, .5},
+
+    -- Layout for ultraWideScreen
+    left33        = {  0,  0, .33,  1},
+    center33      = {.33,  0, .34,  1},
+    right33       = {.67,  0, .33,  1},
+
+    topLeft28     = {  0,  0, .28, .5},
+    topRight28    = {.72,  0, .28, .5},
+    center44      = {.28,  0, .44,  1},
+    bottomLeft28  = {  0, .5, .28, .5},
+    bottomRight28 = {.72, .5, .28, .5},
+
+    topLeft22     = {  0,  0, .22, .5},
+    topRight22    = {.78,  0, .22, .5},
+    left28        = {.22,  0, .28,  1},
+    right28       = { .5,  0, .28,  1},
+    bottomLeft22  = {  0, .5, .22, .5},
+    bottomRight22 = {.78, .5, .22, .5},
 }
 
 function module:applyLayout(win, layout)
