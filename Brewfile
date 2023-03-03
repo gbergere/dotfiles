@@ -4,7 +4,7 @@ tap "homebrew/core"
 tap "heroku/brew"
 
 # Tools
-cash "1password/tap/1password-cli"
+cask "1password/tap/1password-cli"
 brew "fzf"
 cask "hammerspoon"
 brew "iperf"
@@ -13,7 +13,6 @@ brew "rg"
 cask "tg-pro"
 brew "tmux"
 brew "watch"
-brew "basecamp"
 
 # Security
 brew "gnupg"

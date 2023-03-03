@@ -1,12 +1,12 @@
 -----------------------------------------------
 -- App Shortcuts with Cmd
 -----------------------------------------------
--- Ctrl + Alt + 1 -- Akiflow
--- Ctrl + Alt + 2 -- Slack
--- Ctrl + Alt + 3 -- Google Chrome
--- Ctrl + Alt + 4 -- Terminal
--- Ctrl + Alt + 9 -- Notes
--- Ctrl + Alt + 0 -- Safari
+-- Ctrl + Cmd + 1 -- Akiflow
+-- Ctrl + Cmd + 2 -- Slack
+-- Ctrl + Cmd + 3 -- Google Chrome
+-- Ctrl + Cmd + 4 -- Terminal
+-- Ctrl + Cmd + 9 -- Notes
+-- Ctrl + Cmd + 0 -- Safari
 -----------------------------------------------
 
 local hyper = {"ctrl", "cmd"}
