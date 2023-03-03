@@ -17,7 +17,6 @@ brew "watch"
 # Security
 brew "gnupg"
 brew "gpg"
-brew "pinentry-mac"
 
 # DevOps
 brew "awscli"

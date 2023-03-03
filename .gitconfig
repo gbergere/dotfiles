@@ -1,20 +1,22 @@
 [alias]
-	co = checkout
-	st = status -s
+  co = checkout
+  st = status -s
   br = branch
 [core]
-	excludesfile = /Users/gbergere/.gitignore
+  excludesfile = /Users/gbergere/.gitignore
 [user]
-	name = Geoffrey Bergeret
-	signingkey = 7BB70D34
-	email = geoffrey@gbergeret.com
-[pull]
-	rebase = true
+  name = Geoffrey Bergeret
+  email = geoffrey@gbergeret.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFJh1Rt6eu4hVZ66qs9Ua/xgQGOvx0mHKwjKK+rOdp+W
 [commit]
-	gpgSign = true
+  gpgSign = true
 [gpg]
-	program = gpg
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[pull]
+  rebase = true
 [rebase]
-	autosquash = true
+  autosquash = true
 [init]
-	defaultBranch = main
+  defaultBranch = main

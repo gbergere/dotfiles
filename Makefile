@@ -16,9 +16,6 @@ init-home:
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~
-	# GPG
-	[ ! -d ~/.gnupg ] && mkdir ~/.gnupg
-	ln -svhf $(PWD)/.gnupg/* ~/.gnupg
 
 	# Install all brew packages
 	brew bundle
