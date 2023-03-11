@@ -13,6 +13,7 @@ brew "rg"
 cask "tg-pro"
 brew "tmux"
 brew "watch"
+brew "gh"
 
 # Security
 brew "gnupg"
