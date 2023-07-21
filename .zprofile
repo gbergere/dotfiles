@@ -10,6 +10,9 @@ export GPG_TTY=`tty`
 
 bindkey -e # Fix Ctrl-A unbinding.
 
+# Add brew to PATH
+eval $(/opt/homebrew/bin/brew shellenv)
+
 ## ----------------------------------------------------------------------------
 # HISTORY CONF
 # -----------------------------------------------------------------------------

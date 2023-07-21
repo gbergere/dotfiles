@@ -15,13 +15,8 @@ brew "tmux"
 brew "watch"
 brew "gh"
 
-# Security
-brew "gnupg"
-brew "gpg"
-
 # DevOps
 brew "awscli"
-brew "azure-cli"
 brew "circleci"
 cask "google-cloud-sdk"
 brew "heroku"

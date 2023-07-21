@@ -6,7 +6,7 @@
   excludesfile = /Users/gbergere/.gitignore
 [user]
   name = Geoffrey Bergeret
-  email = geoffrey@gbergeret.com
+  email = geoffrey@gbergeret.cloud
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFJh1Rt6eu4hVZ66qs9Ua/xgQGOvx0mHKwjKK+rOdp+W
 [commit]
   gpgSign = true
