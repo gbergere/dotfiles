@@ -107,12 +107,15 @@ fi
 # TMUX
 # -----------------------------------------------------------------------------
 
-if tmux ls | grep --silent "main"
+if [ -z $TMUX ]  # Check if we are already inside tmux
 then
-	if tmux ls | grep -e "^main: .*" | grep --silent -v -e ".* (attached)$"
-	then
-		tmux attach-session -t main
-	fi
-else
-	tmux new-session -s main
+    if tmux ls | grep --silent "main"
+    then
+        if tmux ls | grep -e "^main: .*" | grep --silent -v -e ".* (attached)$"
+        then
+            tmux attach-session -t main
+        fi
+    else
+        tmux new-session -s main
+    fi
 fi
