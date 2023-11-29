@@ -1,5 +1,6 @@
 [alias]
   co = checkout
+  com = !git co "$(git config init.defaultBranch)"
   st = status -s
   br = branch
 [core]
