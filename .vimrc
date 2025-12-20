@@ -24,6 +24,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-liquid'
 Plugin 'rbong/vim-flog'
 Plugin 'godlygeek/tabular'
 Plugin 'sheerun/vim-polyglot'
