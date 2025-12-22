@@ -13,6 +13,11 @@ init-home:
 	# Vim
 	ln -svhf $(PWD)/.vimrc  ~
 	ln -svhf $(PWD)/.vim  ~
+	# NeoVim
+	ln -svhf $(PWD)/.config ~
+	# Codex
+	mkdir -p ~/.codex
+	ln -svhf $(PWD)/.codex/AGENTS.md  ~/.codex
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~

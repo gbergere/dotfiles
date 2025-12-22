@@ -12,8 +12,10 @@ brew "jq"
 brew "rg"
 cask "tg-pro"
 brew "tmux"
+brew "neovim"
 brew "watch"
 brew "gh"
+brew "codex"
 
 # DevOps
 brew "awscli"
