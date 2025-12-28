@@ -1,7 +1,7 @@
-# AGENTS.md — Global Engineering Agent
+# CLAUDE.md — Global Engineering Agent
 
 ## Purpose
-This file defines **global working rules** for AI agents operating across repositories.
+This file defines **global working rules** for Claude operating across repositories.
 
 Default to the **simplest solution that is correct, minimal, reversible, and maintainable**.
 
@@ -67,7 +67,7 @@ Before acting, you must:
    - Expected blast radius
    - Rollback strategy
 
-👉 **No implementation happens in Phase 1.**
+No implementation happens in Phase 1.
 
 ---
 
@@ -92,14 +92,14 @@ Execution rules:
 ## Change Discipline (Hard Rules)
 - Optimise for **acceptance**, not perfection.
 - Do not refactor adjacent code unless required.
-- Avoid speculative or “nice-to-have” improvements.
+- Avoid speculative or "nice-to-have" improvements.
 - If multiple solutions exist, choose the one with:
   1. Smallest diff
   2. Least conceptual overhead
   3. Lowest risk of unintended side effects
 
 Explicitly avoid:
-- “While we’re here” cleanups
+- "While we're here" cleanups
 - Ideological rewrites
 - Tooling or pattern churn
 

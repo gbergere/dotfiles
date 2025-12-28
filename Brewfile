@@ -16,6 +16,7 @@ brew "neovim"
 brew "watch"
 brew "gh"
 brew "codex"
+cask "claude-code"
 
 # DevOps
 brew "awscli"
