@@ -17,6 +17,7 @@ brew "watch"
 brew "gh"
 brew "codex"
 cask "claude-code"
+brew "git-lfs"
 
 # DevOps
 brew "awscli"
