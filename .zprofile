@@ -5,7 +5,7 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1=$'%B%n%b@%B%m%b:[%~]%(?.. (%?%))\n>> '
-export EDITOR="vim"
+export EDITOR="nvim"
 export GPG_TTY=`tty`
 
 bindkey -e # Fix Ctrl-A unbinding.
@@ -44,6 +44,12 @@ zmodload -i zsh/complist
 alias less="less -x4SRFX"
 alias grep="grep --color=auto -I"
 alias grep_search="grep -Eir " # extended regex, recursive, ignore case, show line number
+alias vim="nvim"
+
+# Dockerized psql v18; mounts $PWD at /work for dump/import workflows.
+function psql() {
+    docker run --rm -it -v "$PWD":/work -w /work postgres:18 psql "$@"
+}
 
 # Git Alias to merge a branch from an approved PR
 function gmerge() {
@@ -74,9 +80,9 @@ alias -g PR="2>&1 | tee /dev/tty | grep -oE 'https://.*' | xargs open -a Google\
 alias -g OP="AWS_ACCESS_KEY_ID=\"op://\$AWS_OP_PROFILE/AWS_ACCESS_KEY_ID\" AWS_SECRET_ACCESS_KEY=\"op://\$AWS_OP_PROFILE/AWS_SECRET_ACCESS_KEY\" op run --"
 
 # Suffix aliases
-alias -s md="vim"
-alias -s conf="vim"
-alias -s txt="vim"
+alias -s md="nvim"
+alias -s conf="nvim"
+alias -s txt="nvim"
 alias -s jpg="open"
 alias -s png="open"
 alias -s pdf="open"

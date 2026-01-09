@@ -32,6 +32,25 @@ function module:moveAndResize(win, action)
     f.w = f.w + max.w * action[3]
     f.h = f.h + max.h * action[4]
 
+    if f.w > max.w then
+        f.w = max.w
+    end
+    if f.h > max.h then
+        f.h = max.h
+    end
+    if f.x < max.x then
+        f.x = max.x
+    end
+    if f.y < max.y then
+        f.y = max.y
+    end
+    if f.x + f.w > max.x + max.w then
+        f.x = max.x + max.w - f.w
+    end
+    if f.y + f.h > max.y + max.h then
+        f.y = max.y + max.h - f.h
+    end
+
     win:setFrame(f)
 end
 

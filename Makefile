@@ -21,6 +21,9 @@ init-home:
 	# Claude.AI
 	mkdir -p ~/.claude
 	ln -svhf $(PWD)/.claude/CLAUDE.md  ~/.claude
+	ln -svhf $(PWD)/.claude/TERRAFORM.md  ~/.claude
+	ln -svhf $(PWD)/.claude/GIT.md  ~/.claude
+	ln -svhf $(PWD)/.claude/KUBERNETES.md  ~/.claude
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~

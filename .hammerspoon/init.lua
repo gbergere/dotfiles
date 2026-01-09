@@ -35,5 +35,9 @@ require("window_shortcuts")
 -----------------------------------------------
 
 hs.hotkey.bind({"cmd", "shift"}, 'v', "Defeating past blocking",  function()
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+    local contents = hs.pasteboard.getContents()
+    if not contents then
+        return
+    end
+    hs.eventtap.keyStrokes(contents)
 end)

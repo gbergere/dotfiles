@@ -5,6 +5,14 @@ local window = require("window")
 -----------------------------------------------
 
 local hyper = {"ctrl", "cmd"}
+local function withFocusedWindow(fn)
+  local win = hs.window.focusedWindow()
+  if not win then
+    return
+  end
+  fn(win)
+end
+
 function isWideScreen(screen)
     local screenSize = screen:frame()
     return (screenSize.w/screenSize.h) > (20/9)
@@ -25,14 +33,15 @@ hs.hotkey.showHotkeys(hyper, "s")
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "f", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.center44)
-  elseif isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.center60)
-  else
-    window:applyLayout(win, window.layout.maximized)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.center44)
+    elseif isWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.center60)
+    else
+      window:applyLayout(win, window.layout.maximized)
+    end
+  end)
 
 end)
 
@@ -41,12 +50,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "d", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.left28)
-  else
-    window:applyLayout(win, window.layout.left60)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.left28)
+    else
+      window:applyLayout(win, window.layout.left60)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -54,12 +64,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "g", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.right28)
-  else
-    window:applyLayout(win, window.layout.right40)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.right28)
+    else
+      window:applyLayout(win, window.layout.right40)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -67,12 +78,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "r", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.topLeft28)
-  else
-    window:applyLayout(win, window.layout.topLeft40)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.topLeft28)
+    else
+      window:applyLayout(win, window.layout.topLeft40)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -80,12 +92,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "c", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.bottomLeft28)
-  else
-    window:applyLayout(win, window.layout.bottomLeft40)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.bottomLeft28)
+    else
+      window:applyLayout(win, window.layout.bottomLeft40)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -93,14 +106,15 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "v", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.bottomRight28)
-  elseif isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.bottomRight40)
-  else
-    window:applyLayout(win, window.layout.bottomRight60)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.bottomRight28)
+    elseif isWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.bottomRight40)
+    else
+      window:applyLayout(win, window.layout.bottomRight60)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -108,14 +122,15 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "t", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.topRight28)
-  elseif isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.topRight40)
-  else
-    window:applyLayout(win, window.layout.topRight60)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.topRight28)
+    elseif isWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.topRight40)
+    else
+      window:applyLayout(win, window.layout.topRight60)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -123,14 +138,15 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "f", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.center33)
-  elseif isWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.center60)
-  else
-    window:applyLayout(win, window.layout.maximized)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.center33)
+    elseif isWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.center60)
+    else
+      window:applyLayout(win, window.layout.maximized)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -138,12 +154,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "d", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.left33)
-  else
-    window:applyLayout(win, window.layout.left50)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.left33)
+    else
+      window:applyLayout(win, window.layout.left50)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -151,12 +168,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "g", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.right33)
-  else
-    window:applyLayout(win, window.layout.right50)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.right33)
+    else
+      window:applyLayout(win, window.layout.right50)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -164,12 +182,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "r", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.topLeft22)
-  else
-    window:applyLayout(win, window.layout.topLeft)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.topLeft22)
+    else
+      window:applyLayout(win, window.layout.topLeft)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -177,12 +196,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "t", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.topRight22)
-  else
-    window:applyLayout(win, window.layout.topRight)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.topRight22)
+    else
+      window:applyLayout(win, window.layout.topRight)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -190,12 +210,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "v", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.bottomRight22)
-  else
-    window:applyLayout(win, window.layout.bottomRight)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.bottomRight22)
+    else
+      window:applyLayout(win, window.layout.bottomRight)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -203,12 +224,13 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "c", function()
-  local win = hs.window.focusedWindow()
-  if isUltraWideScreen(win:screen()) then
-    window:applyLayout(win, window.layout.bottomLeft22)
-  else
-    window:applyLayout(win, window.layout.bottomLeft)
-  end
+  withFocusedWindow(function(win)
+    if isUltraWideScreen(win:screen()) then
+      window:applyLayout(win, window.layout.bottomLeft22)
+    else
+      window:applyLayout(win, window.layout.bottomLeft)
+    end
+  end)
 end)
 
 -----------------------------------------------
@@ -216,7 +238,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "=", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.resize.bigger)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.resize.bigger)
+  end)
 end)
 
 -----------------------------------------------
@@ -224,7 +248,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "-", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.resize.thiner)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.resize.thiner)
+  end)
 end)
 
 -----------------------------------------------
@@ -232,7 +258,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "=", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.resize.taller)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.resize.taller)
+  end)
 end)
 
 -----------------------------------------------
@@ -240,7 +268,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "-", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.resize.shorter)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.resize.shorter)
+  end)
 end)
 
 -----------------------------------------------
@@ -248,7 +278,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "]", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.move.right)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.move.right)
+  end)
 end)
 
 -----------------------------------------------
@@ -256,7 +288,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, "[", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.move.left)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.move.left)
+  end)
 end)
 
 -----------------------------------------------
@@ -264,7 +298,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "]", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.move.down)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.move.down)
+  end)
 end)
 
 -----------------------------------------------
@@ -272,7 +308,9 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(table.concat(hyper, "shift"), "[", function()
-  window:moveAndResize(hs.window.focusedWindow(), window.move.up)
+  withFocusedWindow(function(win)
+    window:moveAndResize(win, window.move.up)
+  end)
 end)
 
 -----------------------------------------------
@@ -280,9 +318,10 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, ".", function()
-  local win = hs.window.focusedWindow()
-  local screen = win:screen()
-  win:moveToScreen(screen:next())
+  withFocusedWindow(function(win)
+    local screen = win:screen()
+    win:moveToScreen(screen:next())
+  end)
 end)
 
 -----------------------------------------------
@@ -290,9 +329,10 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, ",", function()
-  local win = hs.window.focusedWindow()
-  local screen = win:screen()
-  win:moveToScreen(screen:previous())
+  withFocusedWindow(function(win)
+    local screen = win:screen()
+    win:moveToScreen(screen:previous())
+  end)
 end)
 
 -----------------------------------------------
@@ -300,17 +340,25 @@ end)
 -----------------------------------------------
 
 hs.hotkey.bind(hyper, 'k', function()
-  hs.window.focusedWindow():focusWindowNorth()
+  withFocusedWindow(function(win)
+    win:focusWindowNorth()
+  end)
 end)
 
 hs.hotkey.bind(hyper, 'j', function()
-  hs.window.focusedWindow():focusWindowSouth()
+  withFocusedWindow(function(win)
+    win:focusWindowSouth()
+  end)
 end)
 
 hs.hotkey.bind(hyper, 'l', function()
-  hs.window.focusedWindow():focusWindowEast()
+  withFocusedWindow(function(win)
+    win:focusWindowEast()
+  end)
 end)
 
 hs.hotkey.bind(hyper, 'h', function()
-  hs.window.focusedWindow():focusWindowWest()
+  withFocusedWindow(function(win)
+    win:focusWindowWest()
+  end)
 end)
