@@ -15,10 +15,7 @@ init-home:
 	ln -svhf $(PWD)/.vim  ~
 	# NeoVim
 	ln -svhf $(PWD)/.config ~
-	# Codex (from OpenAI)
-	mkdir -p ~/.codex
-	ln -svhf $(PWD)/.codex/AGENTS.md  ~/.codex
-	# Claude.AI
+	# Claude Code
 	mkdir -p ~/.claude
 	ln -svhf $(PWD)/.claude/CLAUDE.md  ~/.claude
 	ln -svhf $(PWD)/.claude/TERRAFORM.md  ~/.claude

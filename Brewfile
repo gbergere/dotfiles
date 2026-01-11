@@ -15,7 +15,6 @@ brew "tmux"
 brew "neovim"
 brew "watch"
 brew "gh"
-brew "codex"
 cask "claude-code"
 brew "git-lfs"
 

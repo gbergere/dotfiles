@@ -5,7 +5,7 @@
 ### Format
 Use Conventional Commits format:
 ```
-<type>: <short summary>
+<type>[(scope)]: <short summary>
 
 <detailed explanation>
 <why this change was made>
@@ -13,6 +13,11 @@ Use Conventional Commits format:
 
 Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 ```
+
+The `(scope)` is optional but recommended for repos with multiple services or components to provide context:
+- `feat(api): Add user authentication endpoint`
+- `fix(frontend): Resolve layout issue on mobile`
+- `chore(infra): Update Terraform modules`
 
 ### Types
 - `feat:` — New features or functionality
@@ -22,8 +27,9 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 - `refactor:` — Code restructuring without behavior change
 
 ### Examples
+With scope (multi-service repos):
 ```
-feat: Add user authentication module
+feat(api): Add user authentication module
 
 Implement JWT-based authentication for API endpoints.
 
@@ -31,6 +37,15 @@ Changes:
 - Add authentication middleware
 - Create token generation and validation functions
 - Add user session management
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+```
+
+Without scope (single-service repos):
+```
+feat: Add user authentication
+
+Implement JWT-based authentication.
 
 Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 ```
@@ -72,21 +87,31 @@ Use descriptive, hyphenated names with type prefix:
 ### PR Titles
 Match the commit message format:
 ```
+feat(api): Add user authentication module
+```
+
+Or without scope for single-service repos:
+```
 feat: Add user authentication module
 ```
 
 ### PR Description Structure
 ```markdown
+## Why
+**REQUIRED**: Explain the reasoning and motivation for this PR.
+- What problem does this solve?
+- Why is this change necessary?
+- What value does it provide?
+
 ## Summary
-- High-level overview (bullet points)
-- What problem this solves
+- High-level overview of the solution (bullet points)
 - What changes are being made
 
 ## Changes
 
 ### Component/Section 1
 - Specific changes made
-- Why they were made
+- Why they were made this way
 
 ### Component/Section 2
 - More specific changes

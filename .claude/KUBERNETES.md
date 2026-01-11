@@ -3,13 +3,25 @@
 ## Resource Naming
 
 ### Container Naming
-**Main container in Pods must always be named `app`:**
+**Main container in Pods must be named after the service for observability:**
 ```yaml
+# For a frontend service
 spec:
   containers:
-  - name: app
-    image: registry.example.com/service-name
+  - name: frontend
+    image: registry.example.com/frontend
+
+# For a middleware/API service
+spec:
+  containers:
+  - name: middleware
+    image: registry.example.com/middleware
 ```
+
+**Rationale:**
+- Datadog and other observability tools use container names for metrics and logs
+- Naming all containers "app" makes it impossible to differentiate services in monitoring dashboards
+- Service-specific names provide clear context in traces, logs, and metrics
 
 ### Resource Naming Convention
 - Use consistent, descriptive names across related resources
