@@ -11,7 +11,7 @@ Use Conventional Commits format:
 <why this change was made>
 <what impact it has>
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 The `(scope)` is optional but recommended for repos with multiple services or components to provide context:
@@ -38,7 +38,7 @@ Changes:
 - Create token generation and validation functions
 - Add user session management
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 Without scope (single-service repos):
@@ -47,10 +47,16 @@ feat: Add user authentication
 
 Implement JWT-based authentication.
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 ## Commit Discipline
+
+### When to Commit
+**Only commit when explicitly asked by the user.**
+- Stage changes and prepare commit messages, but wait for user approval
+- Never auto-commit after completing a task
+- Ask "Ready to commit?" or wait for user instruction
 
 ### Granularity
 - One logical change per commit
@@ -64,9 +70,9 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 - If secrets are accidentally committed, reset and recreate commits
 
 ### Co-Authoring
-Always include Claude attribution:
+Always include Claude attribution (use Opus 4.5 for complex work, Sonnet 4.5 for routine tasks):
 ```
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 ## Branching Strategy
@@ -150,7 +156,7 @@ feat: Add new feature
 
 Detailed explanation here.
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 EOF
 )"
 ```
@@ -190,6 +196,31 @@ git diff
 5. Commit with detailed message
 6. Push: `git push origin feat/descriptive-name` (or with `-u` for first push)
 7. Create PR: `gh pr create --title "..." --body "..."`
+
+### Creating PR with Uncommitted Changes on Main
+When you have uncommitted changes on main and need to create a PR:
+
+```bash
+# 1. Create branch (keeps your uncommitted changes)
+git checkout -b feat/descriptive-name
+
+# 2. Commit your changes on the new branch
+git add <specific files>
+git commit -m "..."
+
+# 3. Rebase on latest main
+git fetch origin main
+git rebase origin/main
+
+# 4. Push and create PR
+git push -u origin feat/descriptive-name
+gh pr create --title "..." --body "..."
+```
+
+**Why this approach over stashing:**
+- Changes are safely committed on a branch (not in stash limbo)
+- If rebase has conflicts, you can resolve them properly
+- Cleaner workflow with fewer commands
 
 ### If Secrets Get Committed
 1. Reset the commit: `git reset HEAD~1`

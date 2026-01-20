@@ -27,6 +27,21 @@ Standard files in every module:
   resource "provider_resource" "frontend" { }
   resource "provider_resource" "backend" { }
   ```
+- **Module instances**: Prefix module name with the module type
+  ```hcl
+  # Good - module type as prefix
+  module "google_project_production" {
+    source = "../../modules/google_project"
+  }
+  module "google_artifact_registry_repository_api" {
+    source = "../../modules/google_artifact_registry_repository"
+  }
+
+  # Bad - no module type prefix
+  module "production" {
+    source = "../../modules/google_project"
+  }
+  ```
 
 ### Module Design
 - Build generic modules that wrap Terraform resources with embedded defaults
@@ -132,6 +147,11 @@ output "endpoint" {
   sensitive   = true
 }
 ```
+
+## CLI Commands
+
+- **Always run**: `terraform fmt` after making changes
+- **Never run**: `terraform init`, `terraform validate`, `terraform plan`, or `terraform apply` — these are executed by CI/CD pipelines
 
 ## Anti-Patterns
 

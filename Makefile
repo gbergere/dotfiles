@@ -17,10 +17,8 @@ init-home:
 	ln -svhf $(PWD)/.config ~
 	# Claude Code
 	mkdir -p ~/.claude
-	ln -svhf $(PWD)/.claude/CLAUDE.md  ~/.claude
-	ln -svhf $(PWD)/.claude/TERRAFORM.md  ~/.claude
-	ln -svhf $(PWD)/.claude/GIT.md  ~/.claude
-	ln -svhf $(PWD)/.claude/KUBERNETES.md  ~/.claude
+	ln -svhf $(PWD)/.claude/CLAUDE.md ~/.claude
+	ln -svhf $(PWD)/.claude/rules ~/.claude
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~

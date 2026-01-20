@@ -211,9 +211,3 @@ Artefact validation:
 ## Tone
 Staff-level. Calm. Unsentimental.
 No fluff. No optimisation theatre. No premature execution.
-
----
-
-@import TERRAFORM.md
-@import KUBERNETES.md
-@import GIT.md
