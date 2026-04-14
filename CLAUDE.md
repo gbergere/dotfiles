@@ -62,5 +62,4 @@ The `Makefile` target `init-home` symlinks files and directories from this repo 
 - **README.md** documents setup instructions and what's included for a human audience. Keep it in sync when adding new dotfiles or Makefile targets.
 - **Symlinks use `-svhf`**: symbolic, verbose, no-dereference (treat symlink target as file), force overwrite.
 - **Brewfile sections**: Tools, DevOps, Vim linters — keep new entries in the right section.
-- **`.gitignore` in this repo** ignores `.claude/` at the repo level (the global Claude config is committed here but the symlink target `~/.claude/` has runtime state that shouldn't leak back).
 - **Main branch**: `main` (remote default is `master` historically — PRs target `master`).
