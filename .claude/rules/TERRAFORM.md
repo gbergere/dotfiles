@@ -50,6 +50,32 @@ Standard files in every module:
 - Expose only what callers need
 - Avoid clever abstractions unless justified
 
+### Default Values
+- Do not set variables to their default value when calling a module — rely on the module's defaults
+- Only pass a value when it differs from the default
+- This keeps caller code minimal and makes intentional overrides obvious
+```hcl
+# Good - ha defaults to false in the module, no need to set it
+module "digitalocean_database_cluster_valkey_cache" {
+  source = "../../modules/digitalocean_database_cluster_valkey"
+  name   = "valkey-cache"
+}
+
+# Good - explicitly set because it differs from default
+module "digitalocean_database_cluster_valkey_queues" {
+  source = "../../modules/digitalocean_database_cluster_valkey"
+  name   = "valkey-queues"
+  ha     = true
+}
+
+# Bad - setting ha = false when false is already the default
+module "digitalocean_database_cluster_valkey_cache" {
+  source = "../../modules/digitalocean_database_cluster_valkey"
+  name   = "valkey-cache"
+  ha     = false
+}
+```
+
 ## Configuration Management
 
 ### Secrets vs Configuration
@@ -131,6 +157,32 @@ variable "example" {
     error_message = "Must contain only lowercase letters and hyphens."
   }
 }
+```
+
+### Variable Typing
+Prefer typed variables (`object`, `list(object(...))`) over loose types (`any`, `map(any)`, `list(any)`). Typed variables provide validation at plan time and enable `optional(type, default)` for clean defaults — keeping resource code free of `try()`:
+
+```hcl
+# Good - defaults in the variable type
+variable "block_device_mappings" {
+  type = list(object({
+    device_name = string
+    ebs = object({
+      volume_size           = number
+      volume_type           = optional(string, "gp3")
+      delete_on_termination = optional(bool, true)
+    })
+  }))
+  default = []
+}
+
+# Then in the resource, no try() needed:
+volume_type           = block_device_mappings.value.ebs.volume_type
+delete_on_termination = block_device_mappings.value.ebs.delete_on_termination
+
+# Bad - defaults scattered in resource blocks via try()
+volume_type           = try(block_device_mappings.value.ebs.volume_type, "gp3")
+delete_on_termination = try(block_device_mappings.value.ebs.delete_on_termination, true)
 ```
 
 ### Output Design

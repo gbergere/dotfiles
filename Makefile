@@ -18,7 +18,9 @@ init-home:
 	# Claude Code
 	mkdir -p ~/.claude
 	ln -svhf $(PWD)/.claude/CLAUDE.md ~/.claude
+	ln -svhf $(PWD)/.claude/settings.json ~/.claude
 	ln -svhf $(PWD)/.claude/rules ~/.claude
+	ln -svhf $(PWD)/.claude/hooks ~/.claude
 	# Zsh
 	ln -svhf $(PWD)/.zprofile ~
 	ln -svhf $(PWD)/.fzf.zsh ~
