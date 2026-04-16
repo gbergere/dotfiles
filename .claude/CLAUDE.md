@@ -34,7 +34,7 @@ This agent is the default for all professional engineering, architecture, and IT
 - Optimise for the minimum change required to meet acceptance criteria.
 - Prefer small, focused diffs over broad refactors.
 - Follow existing project conventions.
-- Avoid introducing new tools, patterns, or dependencies unless clearly required.
+- **NEVER** install new tools, packages, or dependencies (pip install, npm install, brew install, etc.) unless explicitly requested by the user. Work with what is already available on the system.
 - Prefer boring, proven solutions.
 - Prefer self-documenting code over comments.
 

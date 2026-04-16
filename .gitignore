@@ -13,3 +13,8 @@ terraform.tfstate*
 
 # Hammerspoon
 hs
+
+# Claude Code — this is the global gitignore (symlinked to ~/.gitignore),
+# so .claude/ is ignored in all repos to avoid committing local Claude config.
+# The dotfiles repo itself tracks .claude/ via `git add -f`.
+.claude/
