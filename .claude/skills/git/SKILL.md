@@ -222,6 +222,10 @@ git add src/**/*.ts
 # Good: Specific files
 git add src/auth/middleware.ts
 
+# Force-add: For files tracked in this repo but listed in .gitignore
+# (e.g. .claude/ is in the global gitignore but tracked in dotfiles)
+git add -f .claude/CLAUDE.md
+
 # Bad: Might include unwanted files
 git add src/
 ```

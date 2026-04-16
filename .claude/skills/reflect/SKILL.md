@@ -1,10 +1,10 @@
 ---
 name: reflect
-description: Review the current session for corrections, feedback, and learnings. Propose updates to skills and memories for approval.
+description: Review the current session for corrections, feedback, and learnings. Apply updates directly — the user reviews via tool permissions.
 when_to_use: When the user asks to review the session, capture learnings, or when prompted before context compaction.
 ---
 
-Review this conversation and identify actionable learnings. Propose changes for approval — never write anything without explicit consent.
+Review this conversation and identify actionable learnings. Present findings in context, then apply changes directly — the user reviews via tool permissions (no need for an extra approval step in conversation).
 
 ## What to look for
 
@@ -44,18 +44,17 @@ Content: [the memory content following the type's structure]
 ### New skill
 Only if the learning doesn't fit any existing skill. Show the full SKILL.md content.
 
-## Approval flow
+## Execution flow
 
-1. Present all proposed changes as a numbered list
-2. Wait for the user to approve, reject, or modify each one
-3. Only write approved changes
-4. For skills: use Edit to apply the diff
-5. For memories: use Write to create the memory file and update MEMORY.md
+1. Present all findings as a numbered list with context (what happened, why it matters)
+2. Apply changes directly — the user reviews and approves/denies via tool permissions
+3. For skills: use Edit to apply the diff
+4. For memories: use Write to create the memory file and update MEMORY.md
 
 ## Rules
 
-- Never write without explicit approval
+- Present findings in context, then act — no redundant conversation approval step
 - Prefer updating existing skills over creating new memories
 - Prefer memories over new skills (only create a new skill if the learning is a full procedure)
-- Keep proposals concise — the user should be able to approve in seconds
+- Keep findings concise
 - If nothing worth capturing, say so and stop
