@@ -1,3 +1,11 @@
+---
+name: terraform
+description: Terraform coding standards — module design, resource naming, variables, lifecycle, and state management. Use when writing or reviewing Terraform code, modules, workspaces, or HCL files.
+when_to_use: When the user asks to write, edit, or review .tf files, Terraform modules, workspaces, variables, outputs, state migrations, or infrastructure-as-code.
+---
+
+Follow these standards for all Terraform work in this session.
+
 # Terraform Coding Standards
 
 ## File Organization
@@ -124,19 +132,6 @@ import {
 ```
 
 **Important**: Remove these blocks after migration is complete and merged.
-
-## Change Discipline
-
-### Minimal Changes
-- Optimize for the smallest diff that meets acceptance criteria
-- Avoid refactors unless required for correctness or safety
-- Do not clean up adjacent code ("while we're here" changes)
-- Keep one concern per file change when possible
-
-### Comments and Documentation
-- Use clear section comments for logical grouping
-- Document non-obvious configuration choices
-- Keep comments up to date with code changes
 
 ## Best Practices
 

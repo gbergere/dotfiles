@@ -1,3 +1,11 @@
+---
+name: git
+description: Git workflow standards — commits, branches, PRs, and push discipline. Use when committing, branching, creating pull requests, rebasing, pushing, cherry-picking, or any git operation.
+when_to_use: When the user asks to commit, stage, push, create a branch, open a PR, review a diff, fix a commit, rebase, merge cleanup, or any git-related workflow.
+---
+
+Follow these standards for all git operations in this session.
+
 # Git Standards
 
 ## Commit Messages

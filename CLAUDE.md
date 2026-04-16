@@ -11,9 +11,8 @@ Personal dotfiles for macOS. All configuration is symlinked from this repo into 
 ├── Brewfile               ← Homebrew packages (tools, DevOps, vim linters)
 ├── .claude/               ← Claude Code global configuration
 │   ├── CLAUDE.md          ← Global Claude instructions (symlinked to ~/.claude/)
-│   ├── settings.json      ← Claude Code settings and hooks config
-│   ├── hooks/             ← Prompt hooks (e.g., inject-git-standards.sh)
-│   └── rules/             ← Engineering standards (GIT, TERRAFORM, KUBERNETES, ISSUES)
+│   ├── settings.json      ← Claude Code settings
+│   └── skills/            ← Lazy-loaded skills (GIT, TERRAFORM, KUBERNETES, ISSUES)
 ├── .config/nvim/          ← Neovim configuration
 ├── .hammerspoon/          ← Hammerspoon window/app/keyboard automation
 ├── .vim/                  ← Vim configuration and plugins (Vundle)
@@ -41,9 +40,10 @@ The `Makefile` target `init-home` symlinks files and directories from this repo 
 2. Add a `ln -svhf` line in the `Makefile` under `init-home`
 3. If it requires a Homebrew package, add it to `Brewfile`
 
-### Adding a New Claude Rule
-1. Create the `.md` file in `.claude/rules/`
-2. The entire `rules/` directory is symlinked — no Makefile change needed
+### Adding a New Claude Skill
+1. Create a directory in `.claude/skills/<name>/` with a `SKILL.md` file
+2. The `skills/` directory is symlinked — no Makefile change needed
+3. Skills are lazy-loaded: Claude auto-invokes them when relevant, or you can invoke manually via `/<name>`
 
 ### Adding a New Brew Package
 1. Add the entry to `Brewfile` under the appropriate section (Tools, DevOps, Vim linters)

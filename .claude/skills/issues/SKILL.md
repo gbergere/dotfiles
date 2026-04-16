@@ -1,3 +1,11 @@
+---
+name: issues
+description: Issue and ticket writing standards — format, scoping, approval workflow, and client-specific rules. Use when creating GitHub issues, writing tickets, or planning work items.
+when_to_use: When the user asks to create a ticket, write an issue, draft a GitHub issue, plan a work item, or scope a task for tracking.
+---
+
+Follow these standards for all issue and ticket creation in this session.
+
 # Issue / Ticket Writing Standards
 
 ## Workflow
@@ -13,7 +21,7 @@ Flow:
 
 ### Branch and PR Association
 - The main branch is `main`
-- When creating an issue that will result in a branch, follow the branch naming conventions in GIT.md
+- When creating an issue that will result in a branch, follow the branch naming conventions from the /git skill
 
 ---
 

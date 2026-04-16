@@ -1,3 +1,11 @@
+---
+name: kubernetes
+description: Kubernetes standards — resource naming, requests/limits, health checks, ingress, and deployment best practices. Use when writing or reviewing Kubernetes manifests, Helm charts, or K8s resources in Terraform.
+when_to_use: When the user asks to write, edit, or review Kubernetes deployments, services, ingress, pods, namespaces, Helm charts, or K8s resources defined in Terraform.
+---
+
+Follow these standards for all Kubernetes work in this session.
+
 # Kubernetes Standards
 
 ## Resource Naming
@@ -52,9 +60,9 @@ resources:
 - CPU limits should be 2x requests or higher
 
 **Common patterns:**
-- Small services: 250m CPU / 256Mi memory → 500m CPU / 512Mi memory
-- Medium services: 500m CPU / 1Gi memory → 1000m CPU / 2Gi memory
-- Large services: 1000m CPU / 2Gi memory → 2000m CPU / 4Gi memory
+- Small services: 250m CPU / 256Mi memory -> 500m CPU / 512Mi memory
+- Medium services: 500m CPU / 1Gi memory -> 1000m CPU / 2Gi memory
+- Large services: 1000m CPU / 2Gi memory -> 2000m CPU / 4Gi memory
 
 ## Health Checks
 
