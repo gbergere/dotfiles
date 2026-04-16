@@ -12,7 +12,7 @@ Personal dotfiles for macOS. All configuration is symlinked from this repo into 
 ├── .claude/               ← Claude Code global configuration
 │   ├── CLAUDE.md          ← Global Claude instructions (symlinked to ~/.claude/)
 │   ├── settings.json      ← Claude Code settings
-│   └── skills/            ← Lazy-loaded skills (GIT, TERRAFORM, KUBERNETES, ISSUES)
+│   └── skills/            ← Lazy-loaded skills (GIT, TERRAFORM, KUBERNETES, ISSUES, REFLECT)
 ├── .config/nvim/          ← Neovim configuration
 ├── .hammerspoon/          ← Hammerspoon window/app/keyboard automation
 ├── .vim/                  ← Vim configuration and plugins (Vundle)
