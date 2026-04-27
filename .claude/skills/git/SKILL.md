@@ -18,8 +18,6 @@ Use Conventional Commits format:
 <detailed explanation>
 <why this change was made>
 <what impact it has>
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 The `(scope)` is optional but recommended for repos with multiple services or components to provide context.
@@ -46,8 +44,6 @@ Changes:
 - Add authentication middleware
 - Create token generation and validation functions
 - Add user session management
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 Without scope (single-service repos):
@@ -55,8 +51,6 @@ Without scope (single-service repos):
 feat: Add user authentication (#123)
 
 Implement JWT-based authentication.
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 ## Commit Discipline
@@ -110,12 +104,6 @@ git push --force-with-lease origin branch-name
 - Always use explicit file paths when staging
 - Never use broad patterns that might include sensitive files
 - If secrets are accidentally committed, reset and recreate commits
-
-### Co-Authoring
-Always include Claude attribution (use Opus 4.5 for complex work, Sonnet 4.5 for routine tasks):
-```
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
-```
 
 ## Branching Strategy
 
@@ -184,7 +172,6 @@ feat: Add user authentication module
 - Security implications
 - Credential handling
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
 ```
 
 ### Updating PRs (Mandatory)
@@ -237,8 +224,6 @@ git commit -m "$(cat <<'EOF'
 feat: Add new feature
 
 Detailed explanation here.
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 EOF
 )"
 ```
