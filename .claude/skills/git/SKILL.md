@@ -82,22 +82,42 @@ git push --force-with-lease origin branch-name
 
 **Fixup (fixing an earlier commit):**
 ```bash
-# 1. Stage the fix
+# 1. Stage the fix and create fixup commit
 git add <files>
-
-# 2. Fixup the target commit (use git log to find the SHA)
 git commit --fixup <target-sha>
 
-# 3. Autosquash (non-interactive)
-GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash origin/main
+# 2. Autosquash rebase
+git rebase --autosquash origin/main
 
-# 4. Force push
-git push --force-with-lease origin branch-name
+# 3. Force push
+git push --force-with-lease
 ```
 
 **Tips:**
 - Use `git log --oneline origin/main..HEAD` to identify the correct target commit
 - Resolve conflicts during rebase by keeping the version with your fix (`git checkout --ours`)
+
+### No AI Attribution — HARD RULE
+**This is a BIG NO! NO! — zero tolerance.**
+
+NEVER include any AI/Claude/Anthropic attribution in git artefacts. This applies to:
+- Commit messages and `Co-Authored-By:` trailers
+- PR titles, descriptions, and comments
+- Issue titles, descriptions, and comments
+- Branch names
+- Tag messages
+- Any other git-tracked text
+
+Forbidden patterns (non-exhaustive):
+- `Co-Authored-By: Claude ...`
+- `Co-Authored-By: Anthropic ...`
+- "🤖 Generated with Claude Code" / "Generated with Claude Code"
+- "Authored-By: Claude" or any variant
+- Any emoji or footer marking the change as AI-generated
+
+Human co-authors (real people) are fine when applicable.
+
+If you catch yourself about to add one of these, stop and remove it before committing or opening the PR.
 
 ### What NOT to Commit
 **CRITICAL: Never commit .env files or secrets**
@@ -126,9 +146,35 @@ When the branch is tied to an issue/ticket, append the issue number at the end:
 
 ## Pull Requests
 
+### Platform CLIs (gh and glab)
+Both CLIs are installed and authenticated on this system:
+- **GitHub** → use `gh` (https://cli.github.com/)
+- **GitLab** → use `glab` (https://gitlab.com/gitlab-org/cli)
+
+**Pick the CLI that matches the remote.** Detect the platform before running PR/MR commands:
+```bash
+git remote get-url origin
+# github.com  → gh
+# gitlab.com or self-hosted GitLab → glab
+```
+
+GitHub ↔ GitLab command equivalents:
+
+| Action                 | GitHub (`gh`)                       | GitLab (`glab`)                      |
+|------------------------|-------------------------------------|--------------------------------------|
+| Create PR/MR (draft)   | `gh pr create --draft`              | `glab mr create --draft`             |
+| Edit PR/MR             | `gh pr edit`                        | `glab mr update`                     |
+| View PR/MR             | `gh pr view`                        | `glab mr view`                       |
+| List PRs/MRs           | `gh pr list`                        | `glab mr list`                       |
+| Check status / CI      | `gh pr checks`                      | `glab ci status` / `glab mr view`    |
+| Mark ready for review  | `gh pr ready`                       | `glab mr update --ready`             |
+| Create issue           | `gh issue create`                   | `glab issue create`                  |
+
+When this skill says "PR", read it as "PR or MR" depending on the remote. The rules (draft first, description structure, updating after commits) apply to both.
+
 ### Draft First (Mandatory)
-**All PRs must be created as drafts.** Use `gh pr create --draft`.
-- This gives the author a chance to review the PR description and CI results before requesting review.
+**All PRs/MRs must be created as drafts.** Use `gh pr create --draft` or `glab mr create --draft`.
+- This gives the author a chance to review the description and CI results before requesting review.
 - Mark as ready for review only when the author explicitly asks.
 
 ### PR Titles
@@ -254,6 +300,16 @@ git diff
 ```
 
 ## Workflow
+
+### Resuming Work on a PR Branch (Mandatory)
+**Every time you switch to an existing PR branch to continue work, rebase it onto main first:**
+```bash
+git checkout <branch>
+git fetch origin main
+git rebase origin/main
+git push --force-with-lease
+```
+This ensures the branch is always up to date before any new work begins.
 
 ### Standard Feature Flow
 1. Start from main: `git checkout main && git pull origin main`
