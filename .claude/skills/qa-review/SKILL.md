@@ -68,7 +68,7 @@ Follow these steps in order.
 3. Check whether the repo documents a **testing strategy** or contribution guide (e.g. `TESTING*.md`, `CONTRIBUTING*`, a `tests/` convention, coverage config). If so, hold the new tests to it; if not, apply the baseline below.
 4. Check whether the change makes any **documentation stale** — read the docs the change touches or implies, not just the code.
 5. Prioritise correctness and security over nits.
-6. If the change touches **auth, payments, PII, or infra**, call it out explicitly as warranting deeper security review.
+6. If the change touches **auth, payments, PII, or infra**, call it out explicitly as warranting deeper security review — run `/security-audit` for a full OWASP/STRIDE/secrets/dependency audit. This skill only covers the security basics below.
 
 ## Severity Model
 
