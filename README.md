@@ -61,6 +61,7 @@ Installs [Vundle](https://github.com/VundleVim/Vundle.vim) and [Luacheck](https:
 ### Claude Code
 - Global instructions (`.claude/CLAUDE.md`)
 - Engineering standards (`.claude/rules/`) — Git, Terraform, Kubernetes, Issues
+- Skills (`.claude/skills/`) — invokable as `/<name>`, including `/qa-review` (read-only QA review of a PR or branch against its base)
 - Prompt hooks (`.claude/hooks/`)
 
 ### Linting
