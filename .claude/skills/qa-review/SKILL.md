@@ -65,8 +65,10 @@ Follow these steps in order.
 
 1. Read the PR/MR description (or the branch commit messages if there is no PR) for **intent and acceptance criteria**. Review the change against that intent.
 2. Read the actual changed files for context where the diff hunks alone are not enough — don't review hunks in isolation.
-3. Prioritise correctness and security over nits.
-4. If the change touches **auth, payments, PII, or infra**, call it out explicitly as warranting deeper security review.
+3. Check whether the repo documents a **testing strategy** or contribution guide (e.g. `TESTING*.md`, `CONTRIBUTING*`, a `tests/` convention, coverage config). If so, hold the new tests to it; if not, apply the baseline below.
+4. Check whether the change makes any **documentation stale** — read the docs the change touches or implies, not just the code.
+5. Prioritise correctness and security over nits.
+6. If the change touches **auth, payments, PII, or infra**, call it out explicitly as warranting deeper security review.
 
 ## Severity Model
 
@@ -81,9 +83,11 @@ Follow these steps in order.
 
 **Correctness** — Does it do what the description says? Edge cases handled? Error handling complete? Race conditions or concurrency issues?
 
-**Tests** — Tests present for the new behaviour? Cover happy path, edge cases, and error cases? Readable and well-named? Coverage maintained?
+**Tests** — Is every new or changed code path covered by tests (happy path, edge cases, error cases)? No new behaviour merged untested — `[BLOCK]` if new logic ships with no covering test. If the repo documents a testing strategy or convention, do the new tests follow it (level, structure, naming, coverage threshold)? Are tests readable and well-named? Is coverage maintained or improved?
 
 **Security (OWASP basics)** — No hardcoded secrets, credentials, or PII? Input validated at boundaries? Authorisation checks present where needed? No injection vectors (SQL, command, template, XSS)? Auth/payments/PII/infra flagged for deeper review?
+
+**Documentation** — Are docs updated to reflect the change wherever it makes them stale? Check README, `docs/`, API/reference docs, CHANGELOG/release notes, runbooks, config/flag references, and in-code docstrings/comments. New or changed public behaviour, configuration, flags, or interfaces must be documented. `[BLOCK]` any doc that now contradicts the code; `[SUGGEST]` missing-but-non-contradictory docs.
 
 **Standards compliance** — Follows the repo's existing conventions and patterns? Commit messages follow Conventional Commits?
 
